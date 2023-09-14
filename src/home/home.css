@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: aqua; */
+    align-items: center;
+    
+}
+.slider{
+    background-color: #0f0024;
+    /* height: 60vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.tranding-nu{
+    padding: 10px;
+    /* background-color: aqua; */
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%; 
+    position: relative;
+    /* left: 30px; */
+}
+.tranding-nut {
+    padding: 10px;
+    /* background-color: aqua; */
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%; 
+    position: relative;
+    /* left: 30px; */
+}
+.tranding-nu h2,.tranding-nut h2{
+    color: #ffffff;
+}
+.tranding-nut .item {
+    width: 250px;
+    height: 150px;
+    background: green;
+    border-radius: 10px;
+  }
+
+.crousal-bar {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000;
+  }

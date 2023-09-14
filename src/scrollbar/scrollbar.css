@@ -1,0 +1,70 @@
+/* styles.css */
+
+.carousel-wrapper {
+  /* margin-top: 5px; */
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  margin-top: 70px;
+  /* margin-bottom: .625rem; */
+}
+
+.carousel-container {
+  overflow: hidden; /* Hide overflowing content */
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  display: flex; /* Display the content in a row */
+  padding: 0 20px; /* Add side padding */
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 0;
+}
+
+.carousel-content {
+  display: flex;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out; /* Add smooth transition for scrolling */
+}
+
+.carousel-item {
+  width: 100%;
+  height: 430px;
+  background: #0f0024;
+}
+
+.carousel-prev,
+.carousel-next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  opacity: 0.8;
+}
+
+.carousel-prev {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+.carousel-next {
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+/* Add media queries or additional styles as needed for responsiveness */
