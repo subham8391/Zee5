@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./carousal.css";
-import { BsFillArrowLeftCircleFill,BsFillArrowRightCircleFill } from "react-icons/bs";
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 
-function Carousel({ apiEndpoint , filterType}) {
+function Carousel({ apiEndpoint, filterType }) {
   const [width, setWidth] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [images, setImages] = useState([]);
@@ -18,7 +19,7 @@ function Carousel({ apiEndpoint , filterType}) {
   };
 
   const fetchImages = async () => {
-    
+
     try {
       const response = await fetch(
         apiEndpoint,
@@ -29,19 +30,19 @@ function Carousel({ apiEndpoint , filterType}) {
           }),
         }
       );
-  
+
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-  
+
       const data = await response.json();
       const filteredData = data.data.filter(item => item.type === filterType);
       setImages(filteredData);
     } catch (error) {
-      console.error("Error fetching images from Unsplash:", error);
+      console.error("Error fetching Data", error);
     }
   };
-  
+
 
   const handleNextClick = () => {
     const carousel = carouselRef.current;
@@ -81,25 +82,37 @@ function Carousel({ apiEndpoint , filterType}) {
     updateWidth();
     window.addEventListener("resize", updateWidth);
 
-    // Fetch images from the Unsplash API when the component mounts
+  
     fetchImages();
 
     return () => {
       window.removeEventListener("resize", updateWidth);
     };
   }, []);
-
+  console.log(images);
   return (
     <div id="wrapper">
       <div id="carousel" ref={carouselRef}>
         <div id="content" ref={contentRef}>
           {images.map((imageUrl, index) => (
-            <img
-              key={index}
-              className="item"
-              src={imageUrl.thumbnail}
-              alt={`Image ${index + 1}`}
-            />
+            <div className="image-cont" key={index}>
+              <Link to={`/details/${imageUrl.type}/${imageUrl._id}`}>
+              <img
+                className="item"
+                src={imageUrl.thumbnail}
+                alt={`Image ${index + 1}`}
+              />
+              </Link>
+              <div className="details">
+                <h5 className='c-name'>{imageUrl.title}</h5>
+                <div className="a-btn">
+                  <button>
+                  <Link to={`/details/${imageUrl.type}/${imageUrl._id}`}>Watch</Link>
+                  </button>
+                  <button>Share</button>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -126,4 +139,3 @@ function Carousel({ apiEndpoint , filterType}) {
 }
 
 export default Carousel;
-

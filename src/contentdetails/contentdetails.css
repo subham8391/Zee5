@@ -1,0 +1,159 @@
+.vid-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+.v-top{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* background-color: rgb(29, 80, 124); */
+    margin-top: 68px;
+    padding: 0 20px;
+    /* height: 180vh; */
+}
+.v-cont{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 750px;
+    /* background-color: rgb(156, 63, 63); */
+}
+.vid-con{
+    height: 450px;
+    width: 750px;
+    /* background-color: aqua; */
+}
+
+.vid-det{
+    
+    /* background-color: yellowgreen; */
+    text-transform: capitalize;
+    color: aliceblue;
+}
+.m-title{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bolder;
+    
+}
+.r-cont{
+    display: flex;
+    flex-direction: column;
+    padding:0 30px ;
+    /* background-color: rgb(117, 24, 160); */
+    overflow: scroll;
+    height: 153vh;
+    
+}
+
+.r-cont.r-cont::-webkit-scrollbar {
+    width: .5px; 
+  }
+  
+  
+  .r-cont::-webkit-scrollbar-track {
+    background:  #0a0018;
+  }
+  
+  .r-cont::-webkit-scrollbar-thumb {
+    background:  #0a0018;
+  }
+.d-vid{
+    width: 100%;
+    height: 100%;
+}
+.d-vid-title{
+    color: white;
+}
+.v-tca{
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    gap: 30px; 
+    padding-bottom: 20px;
+    font-size: 12px;
+    color: blueviolet;
+}
+.v-genre{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 12px;
+    padding-bottom: 20px;
+    color: blueviolet;
+}
+.v-genre-hed{
+    color: rgb(221, 221, 221);
+    font-size: 20;
+}
+.g-icon{
+    font-size: 15px;
+    color: gray;
+}
+.v-ac-con{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+.v-ac-btn{
+    height: 100px;
+    /* width: 100px; */
+    background-color: rgb(23, 23, 37);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    padding: 20px 30px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.v-ac-btn span{
+    font-size: 20px;  
+    color: rgb(221, 221, 221);
+}
+.v-ac-btn:hover{
+    background-color: rgb(41, 41, 67);
+}
+.v-cast{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 12px;
+    padding-bottom: 20px;
+    color: blueviolet;
+}
+.v-cast-hed{
+    color: rgb(221, 221, 221);
+    font-size: 20;
+}
+.v-dir{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 12px;
+    padding-bottom: 20px;
+    color: blueviolet;
+}
+.v-dir-hed{
+    color: rgb(221, 221, 221);
+    font-size: 20; 
+}
+.v-descrip{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 12px;
+    padding-bottom: 20px;
+    color: blueviolet;
+}
+.v-descrip-hed{
+    color: rgb(221, 221, 221);
+    font-size: 20; 
+}
+/* .v-bottom{
+    margin-top: 10px;
+    background-color: blue;
+    height: 500px;
+} */

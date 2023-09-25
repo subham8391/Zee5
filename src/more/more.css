@@ -1,0 +1,25 @@
+.more-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .more-header {
+    margin-top: 100px;
+    color: aliceblue;
+    margin-bottom: 20px;
+  }
+  .more-main{
+    display: flex;
+    flex-direction: column;
+  }
+  .more-content {
+    width: 100%;
+    display: grid;
+    justify-content: center; /* Center horizontally */
+    align-content: center; /* Center vertically */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
+    gap: 50px;
+  }
+  

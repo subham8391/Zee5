@@ -1,10 +1,10 @@
 import React, { useState,useEffect,useRef,useReducer } from 'react'
 import './scrollbar.css'
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/dist/css/splide.min.css"; // Import Splide CSS
+import "@splidejs/splide/dist/css/splide.min.css"; 
 
 
-function Carousel({ imageUrls}) {
+function Scrollbar({ imageUrls}) {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -15,17 +15,17 @@ function Carousel({ imageUrls}) {
     <div className="carousel-wrapper">
       <Splide
         options={{
-          type: "loop", // Infinite loop
-          perPage: 1, // Display 3 images per page
-          autoplay: true, // Autoplay
-          interval: 2000, // Autoplay interval in milliseconds
+          type: "loop", 
+          perPage: 1,
+          autoplay: true, 
+          interval: 2000, 
           breakpoints: {
-            // Responsive breakpoints
+           
             768: {
-              perPage: 2, // Display 2 images per page on smaller screens
+              perPage: 2, 
             },
             576: {
-              perPage: 1, // Display 1 image per page on mobile devices
+              perPage: 1, 
             },
           },
         }}
@@ -44,5 +44,5 @@ function Carousel({ imageUrls}) {
   );
 }
 
-export default Carousel;
+export default Scrollbar;
 

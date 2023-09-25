@@ -1,0 +1,14 @@
+.re-heading{
+    text-transform: capitalize;
+    font-size: 25px;
+    padding-bottom:15px ;
+    color: white;
+    /* position: fixed;
+    z-index: 5;
+    background-color: black; */
+}
+.rc-Container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:0 25px;
+}
