@@ -1,0 +1,76 @@
+.my-acc-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: aqua; */
+    align-items: center;
+    padding-top:75px;
+    padding-bottom: 20px;
+}
+.my-acc-section{
+    background-color: #0a0018;
+    border: 1px solid rgb(44, 43, 44);
+    border-radius: 5px;
+    height: 90vh;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    color: white;
+    text-transform: capitalize;
+    line-height: 50px;
+}
+
+.tab-header {
+    padding: 20px 0 20px 0;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(33, 26, 39);
+    border: 1px solid rgb(44, 43, 44);
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .tab {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 5px 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: border-right 0.3s;
+  }
+  
+  /* .tab:hover {
+    border-right: 2px solid white;
+  }
+   */
+  .tab.active {
+    border-right: 2px solid white;
+    font-weight: bold;
+  }
+  
+  .tab-content {
+    padding: 20px;
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+   
+  }
+  .tab-item{
+    width: 100%;
+    /* background-color: bisque; */
+  }
+  .tab-item-hr{
+    margin-top: 20px;
+    border-top:1px solid rgb(44, 43, 44);
+  }
+  
+  
+  

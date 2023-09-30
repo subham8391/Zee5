@@ -12,7 +12,6 @@ export const navbarLinks = [
     { path: '/music', label: 'Music' },
     { path: '/news', label: 'News' },
     { path: '/education', label: 'Education' },
-    { path: '/sports', label: 'Sports' },
     { path: '/rent', label: 'Rent' },
     { path: '/video', label: 'Video' },
     { path: '/songs', label: 'Songs' },

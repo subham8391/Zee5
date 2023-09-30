@@ -1,9 +1,13 @@
-/* Base styles for the signup form */
-.signup-form {
+
+.signup-form-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  padding: 20px;
+}
+.signup-form{
   max-width: 350px;
-  margin: 100px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 15px;
@@ -46,11 +50,27 @@
 .so-icon:hover {
   color: #0056b3;
 }
+.devider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.devider span{
+  border: 1px solid #5a5959;
+  background-color: #d4d4d4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 50%;
+  font-weight: bolder;
+}
 .line {
     border-top: 0.5px solid #5a5959; 
     margin-top: 0;
-    margin-bottom: 20px;
-    width: 100%;
+    width: 45%;
 }
 
 /* Form styles */
