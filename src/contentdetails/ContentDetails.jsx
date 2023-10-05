@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import RecommendedContent from '../recommendedContent/RecommendedContent';
 import { BsFillCircleFill ,BsFillPlayCircleFill} from "react-icons/bs";
 import { FaShare } from "react-icons/fa6";
-import { BiListPlus } from "react-icons/bi";
+import WatchlistButton from './WatchlistButton';
 import './contentdetails.css';
 import ContentDetails_Bottom from '../contentDetails-bottom/ContentDetails_Bottom';
 
@@ -11,7 +11,7 @@ function ContentDetails() {
   const { id, type } = useParams();
   const [detailsUrl, setDetailsUrl] = useState('');
   const [videoKey, setVideoKey] = useState(0);
-
+  
   useEffect(() => {
     const fetchDetailsUrl = async () => {
       try {
@@ -40,6 +40,7 @@ function ContentDetails() {
     };
 
     fetchDetailsUrl();
+    window.scrollTo(0, 0);
   }, [id]);
 
   return (
@@ -69,7 +70,7 @@ function ContentDetails() {
                   </div>
                   <div className="v-ac-con">
                     <div className='v-ac-btn'><FaShare /> <span>share</span></div>
-                    <div className='v-ac-btn'><BiListPlus /> <span>watchlist</span></div>
+                    <WatchlistButton id={id} />
                     <div className='v-ac-btn'><BsFillPlayCircleFill /> <span>watch Trailer</span></div>
                   </div>
                   <div className="v-cast">

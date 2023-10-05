@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './movies.css'
 import { Link } from 'react-router-dom';
 import { FaChevronRight } from "react-icons/fa6";
@@ -17,6 +17,10 @@ const imageUrls = [si8, si2, si9, si10, si11, si12, si7
 ];
 
 function Movies() {
+  useEffect(() => {
+    
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="home-container">
       <section className="slider">

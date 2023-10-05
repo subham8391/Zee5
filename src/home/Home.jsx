@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { FaChevronRight } from "react-icons/fa6";
 import Scrollbar from '../scrollbar/Scrollbar'
@@ -19,6 +19,10 @@ const imageUrls = [si1, si2, si3, si4, si5, si6, si7
 ];
 
 function Home() {
+  useEffect(() => {
+    
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="home-container">
       <section className="slider">

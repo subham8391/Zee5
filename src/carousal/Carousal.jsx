@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./carousal.css";
-import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from "react-icons/bs";
+import { FaPlay } from "react-icons/fa6";
+import { PiShareFat } from "react-icons/pi";
 import { Link } from 'react-router-dom';
 
 
@@ -8,6 +10,7 @@ function Carousel({ apiEndpoint, filterType }) {
   const [width, setWidth] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
   const carouselRef = useRef(null);
   const contentRef = useRef(null);
   const prevButton = useRef(null);
@@ -38,6 +41,7 @@ function Carousel({ apiEndpoint, filterType }) {
       const data = await response.json();
       const filteredData = data.data.filter(item => item.type === filterType);
       setImages(filteredData);
+      setLoading(false)
     } catch (error) {
       console.error("Error fetching Data", error);
     }
@@ -89,31 +93,37 @@ function Carousel({ apiEndpoint, filterType }) {
       window.removeEventListener("resize", updateWidth);
     };
   }, []);
-  console.log(images);
+  // console.log(images);
   return (
     <div id="wrapper">
       <div id="carousel" ref={carouselRef}>
         <div id="content" ref={contentRef}>
-          {images.map((imageUrl, index) => (
-            <div className="image-cont" key={index}>
-              <Link to={`/details/${imageUrl.type}/${imageUrl._id}`}>
-              <img
-                className="item"
-                src={imageUrl.thumbnail}
-                alt={`Image ${index + 1}`}
-              />
-              </Link>
-              <div className="details">
-                <h5 className='c-name'>{imageUrl.title}</h5>
-                <div className="a-btn">
-                  <button>
-                  <Link to={`/details/${imageUrl.type}/${imageUrl._id}`}>Watch</Link>
-                  </button>
-                  <button>Share</button>
+        {loading ? ( 
+          <div className="looding-cont" >
+            <p>Loading...</p>
+            </div>
+          ) : (
+            images.map((imageUrl, index) => (
+              <div className="image-cont" key={index}>
+                <Link to={`/details/${imageUrl.type}/${imageUrl._id}`}>
+                  <img
+                    className="item"
+                    src={imageUrl.thumbnail}
+                    alt={`Image ${index + 1}`}
+                  />
+                </Link>
+                <div className="details">
+                  <h5 className='c-name'>{imageUrl.title}</h5>
+                  <div className="a-btn">
+                    <button className='wa-btn'>
+                      <Link to={`/details/${imageUrl.type}/${imageUrl._id}`}><FaPlay className='wa-icon' /> Watch</Link>
+                    </button>
+                    <button className='sa-btn'><PiShareFat className='sa-icon' /> Share</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
       <button

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams,Link } from 'react-router-dom';
+import { FaPlay } from "react-icons/fa6";
+import { PiShareFat } from "react-icons/pi";
 import './more.css';
 
 
@@ -37,8 +39,12 @@ function More() {
     };
 
     fetchData();
+    
   }, [apiEndpoint, filterType]);
-
+  useEffect(() => {
+    
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className='more-container'>
       
@@ -62,10 +68,10 @@ function More() {
               <div className="details">
                 <h5 className='c-name'>{data.title}</h5>
                 <div className="a-btn">
-                  <button>
-                  <Link to={`/details/${data.type}/${data._id}`}>Watch</Link>
+                  <button className='wa-btn'>
+                  <Link to={`/details/${data.type}/${data._id}`}><FaPlay className='wa-icon' /> Watch</Link>
                   </button>
-                  <button>Share</button>
+                  <button className='sa-btn'><PiShareFat className='sa-icon' /> Share</button>
                 </div>
               </div>
             </div>

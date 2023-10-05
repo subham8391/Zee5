@@ -1,16 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Auth from '../auth';
 import logo from '../images/logo.png';
-import { FaBars } from 'react-icons/fa6';
+import { FaBars,FaCircleUser } from 'react-icons/fa6';
 import { BiSolidCrown } from "react-icons/bi";
 import { BsGrid3X3GapFill } from 'react-icons/bs';
 import { TbLanguageHiragana } from 'react-icons/tb';
 import { RiCloseLine } from "react-icons/ri";
 import { navbarLinks } from '../ConstentData';
 import SearchDropdown from './SearchDropdown';
+import UserModal from './UserModal';
+import SightBarModal from './SightBarModal';
 import './navigationdar.css';
 
 const NavigationBar = () => {
+  const isAuthenticated = Auth.isAuthenticated();
+
   const [searchQuery, setSearchQuery] = useState('');
   const [showGenres, setShowGenres] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
@@ -20,6 +25,8 @@ const NavigationBar = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const location = useLocation();
   const scSearchRef = useRef(null);
+  const [isUserModalOpen, setIsUserModalOpen] = useState(false);
+  const [isSightBarModalOpen, setIsSightBarModalOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,6 +46,7 @@ const NavigationBar = () => {
         // Click occurred outside of sc-search, close the modal
         setShowDropdown(false);
         setIsInputFocused(false);
+        
       }
     };
 
@@ -86,12 +94,30 @@ const NavigationBar = () => {
     setShowDropdown(true);
   };
 
-  const handleInputBlur = () => {
-    // setIsInputFocused(false);
-  };
+  // const handleInputBlur = () => {
+  //   setIsInputFocused(false);
+  // };
 
   const handleClearButtonClick = () => {
     setSearchQuery(''); // Clear the input field
+  };
+
+  const openUserModal = () => {
+    setIsUserModalOpen(true);
+  };
+
+  const closeUserModal = () => {
+    setIsUserModalOpen(false);
+  };
+  
+   // Open SightBarModal
+   const openSightBarModal = () => {
+    setIsSightBarModalOpen(true);
+  };
+
+  // Close SightBarModal
+  const closeSightBarModal = () => {
+    setIsSightBarModalOpen(false);
   };
 
   const renderLinks = (links, isSubNavbarLink = false) =>
@@ -188,22 +214,23 @@ const NavigationBar = () => {
                 <TbLanguageHiragana />
               </div>
               <div className="auth-buttons">
-                {renderLinks(
-                  [
-                    { path: '/login', label: 'LogIn', },
-
-                  ],
-                  true
+              {isAuthenticated ? ( // Check if the user is authenticated
+                  <div className='user-btn' onClick={openUserModal}><FaCircleUser /></div> 
+                  
+                ) : (
+                  <Link to="/login" className='lin-btn'>Login</Link> 
                 )}
                 <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
               </div>
-              <div className="sightbar">
+               <div className="sightbar" onClick={openSightBarModal}>
                 <FaBars />
               </div>
             </div>
           </div>
         </nav>
       )}
+      {isUserModalOpen && <UserModal onClose={closeUserModal} />}
+      {isSightBarModalOpen && <SightBarModal isOpen={isSightBarModalOpen} onClose={closeSightBarModal} />}
     </>
   );
 };

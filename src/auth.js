@@ -50,8 +50,13 @@ const Auth = {
         }
   
         const data = await response.json();
-        localStorage.setItem('token', data.token);
-        return true;
+        const { token, data: loginData } = data;
+        const { name: userName } = loginData;
+        const { email: userEmail } = loginData;
+        sessionStorage.setItem("authToken", token);
+        sessionStorage.setItem("userInfoN", userName);
+        sessionStorage.setItem("userInfoE", userEmail);
+        return data;
       } catch (error) {
         console.error('Authentication error:', error);
         throw error; 
@@ -59,20 +64,22 @@ const Auth = {
     },
      
     // Function to handle user logout
-    // logout: () => {
-    //   try {
+    logout: () => {
+      try {
         // Clear the JWT token (and user data) from storage (e.g., cookies)
-        // localStorage.removeItem('token');
-    //   } catch (error) {
-    //     console.error('Logout error:', error);
-    //   }
-    // },
+        sessionStorage.removeItem('authToken');
+        sessionStorage.removeItem('userInfoN');
+        sessionStorage.removeItem('userInfoE');
+      } catch (error) {
+        console.error('Logout error:', error);
+      }
+    },
   
     // Function to check if the user is authenticated
     isAuthenticated: () => {
      
-        const token = localStorage.getItem('token');
-        // console.log(token)
+        const token = sessionStorage.getItem('authToken');
+        
         return !!token;
     },
   };

@@ -50,6 +50,18 @@
     margin: auto;
     box-sizing: border-box;
   }
+  .looding-cont{
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 300px;
+    transition: transform 0.3s;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+  }
   .image-cont {
     position: relative;
     overflow: hidden;
@@ -72,15 +84,54 @@
    flex-direction: row;
    justify-content: space-around;
    align-items: center;
-   gap: 5px;
+   gap: 10px;
   }
-  .a-btn button{
+
+  .wa-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
     cursor: pointer;
-    padding: 3px 10px;
+    padding:8px 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    transition: background-color 0.5s ease-in-out;
+   border-radius: 5px;
   }
-  .a-btn button a{
+  .wa-btn a{
     text-decoration: none;
     color: #000000;
+    cursor: pointer;
+  }
+  .wa-icon{
+   padding-top:2px ;
+  }
+  .wa-btn:hover{
+    border: 1px solid rgb(111, 51, 168);
+    background-color: rgb(111, 51, 168);
+    
+  }
+  .wa-btn:hover a{
+    color: #ffffff;
+  }
+  .sa-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 16.5px;
+    color: grey;
+    transition: color 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  .sa-btn:hover{
+    color: rgb(111, 51, 168) ;
   }
   .details {
     display: flex;

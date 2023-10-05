@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './tvshows.css'
 import { Link } from 'react-router-dom';
 import { FaChevronRight } from "react-icons/fa6";
@@ -16,6 +16,10 @@ import './tvshows.css'
 const imageUrls = [si13, si14, si15, si16, si17, si6, si18];
 
 function TvShows() {
+  useEffect(() => {
+    
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="tvshow-container">
       <section className="slider">

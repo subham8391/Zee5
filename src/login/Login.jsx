@@ -34,7 +34,7 @@ function Login() {
 
       if (loginResult) {
         console.log('Login successful');
-        navigate('/Account');
+        navigate('/');
       } else {
         console.error('Login failed');
         setError('Enter a valid email id and password');
