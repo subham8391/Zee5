@@ -13,7 +13,8 @@ function MyAccount() {
     const segments = path.split('/');
     const lastSegment = segments[segments.length - 1];
     setActiveTab(lastSegment)
-  }, [location])
+  }, [location]);
+  
   // Data for tabs and their corresponding content
   const tabs = [
     { label: 'Profile', heading: 'My Profile', tabName: 'profile' },

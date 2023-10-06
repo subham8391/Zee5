@@ -1,8 +1,10 @@
 import React from 'react'
-
+import ContentFetcher from './ContentFetcher'
 function Sportswl() {
   return (
-    <div>Sportswl</div>
+    <div>
+      <ContentFetcher contentType='sports'/>
+    </div>
   )
 }
 

@@ -17,6 +17,7 @@ function UserDropdownSelect() {
     { id: 2, name: 'My Subscriptions', path: '/account/subscription' },
     { id: 3, name: 'My Rentals', path: '/account/rentals' },
     { id: 4, name: 'My Transactions', path: '/account/transaction' },
+    
   ];
 
   const handleOptionClick = (path) => {
@@ -44,9 +45,7 @@ function UserDropdownSelect() {
             <div
               key={option.id}
               className="Userdropdown-link"
-              onClick={(e) => {handleOptionClick(option.path);
-                e.stopPropagation()
-              
+              onClick={() => {handleOptionClick(option.path)
               }}
             >
               {option.name}

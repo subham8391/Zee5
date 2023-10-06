@@ -116,6 +116,7 @@
 .my-sub-tab-acc-section{
   background-color: #0a0018;
     /* border: 1px solid rgb(44, 43, 44); */
+    /* margin-top: 20px; */
     border-radius: 5px;
     height:85%;
     width: 100%;
@@ -155,9 +156,13 @@
   font-weight: bold;
 }
 .sub-tab-content{
-  border-top: 1px solid rgb(44, 43, 44);;
+  border-top: 1px solid rgb(44, 43, 44);
+  /* margin-top: 10px; */
   width: 100%;
+  max-height: 80vh;
   height: 100%;
+  padding: 10px;
+  overflow: scroll;
 }
 
 /* Subscriptions */

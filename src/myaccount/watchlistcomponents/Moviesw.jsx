@@ -1,8 +1,10 @@
 import React from 'react'
-
+import ContentFetcher from './ContentFetcher'
 function Moviesw() {
   return (
-    <div>Moviesw</div>
+    <div >
+      <ContentFetcher contentType="movie" />
+    </div>
   )
 }
 

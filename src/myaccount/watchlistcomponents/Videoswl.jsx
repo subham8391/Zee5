@@ -1,8 +1,10 @@
 import React from 'react'
-
+import ContentFetcher from './ContentFetcher'
 function Videoswl() {
   return (
-    <div>Videoswl</div>
+    <div>
+      <ContentFetcher contentType='tv show'/>
+    </div>
   )
 }
 

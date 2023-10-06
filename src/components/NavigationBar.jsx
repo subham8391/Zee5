@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Auth from '../auth';
-import logo from '../images/logo.png';
+import logo from '../images/zee5-logo-A4464FCB2C-seeklogo.com.png';
+
 import { FaBars,FaCircleUser } from 'react-icons/fa6';
 import { BiSolidCrown } from "react-icons/bi";
 import { BsGrid3X3GapFill } from 'react-icons/bs';
@@ -229,7 +230,7 @@ const NavigationBar = () => {
           </div>
         </nav>
       )}
-      {isUserModalOpen && <UserModal onClose={closeUserModal} />}
+      {isUserModalOpen && <UserModal  onClose={closeUserModal} />}
       {isSightBarModalOpen && <SightBarModal isOpen={isSightBarModalOpen} onClose={closeSightBarModal} />}
     </>
   );
