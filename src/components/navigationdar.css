@@ -520,19 +520,19 @@ input[type="search"]::-webkit-search-cancel-button {
 .sight-bar-modal.open {
   right: 0; 
 }
-
 .sight-bar-modal-content {
   overflow:scroll;
-  background-color: #fff;
+  background-color: #171021;
+  color: #ffffff;
   margin-top: 70px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.543);
   height: 85vh;
   width: 80%; 
-  max-width: 350px; 
+  max-width: 20rem; 
   transform: translateX(100%); 
-  transition: transform 0.5s ease-in-out; 
+  transition: transform 0.3s ease-in-out; 
 }
 
 .sight-bar-modal.open .sight-bar-modal-content {

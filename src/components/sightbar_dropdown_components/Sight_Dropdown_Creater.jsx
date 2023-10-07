@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
+import './sightbar-dropdown.css'
 
-
-function Sight_Dropdown_Creater({ content }) {
+function Sight_Dropdown_Creater({ heading,content }) {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
     const toggleSightbarDropdown = () => {
@@ -18,7 +18,7 @@ function Sight_Dropdown_Creater({ content }) {
     return (
       <div className={`SightbarDropdown ${isOpen ? 'active' : ''}`}>
         <div className="SightbarDropdown-toggle" onClick={toggleSightbarDropdown}>
-          My Account {isOpen ? <IoChevronUp /> : <IoChevronDown />}
+          {heading} {isOpen ? <IoChevronUp /> : <IoChevronDown />}
         </div>
         {isOpen && (
           <div className="SightbarDropdown-content">
