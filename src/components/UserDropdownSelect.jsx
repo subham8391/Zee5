@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import Auth from '../auth'; // Import the Auth object
 
-function UserDropdownSelect() {
+function UserDropdownSelect({onClose}) {
   const [isOpen, setIsOpen] = useState(false);
   const isAuthenticated = Auth.isAuthenticated();
   const navigate = useNavigate();
@@ -21,12 +21,14 @@ function UserDropdownSelect() {
   ];
 
   const handleOptionClick = (path) => {
-    setIsOpen(false);
-    navigate(path); // Navigate to the selected option's path
+    // setIsOpen(false);
+    onClose();
+    navigate(path); 
   };
 
   const handleLogout = () => {
     Auth.logout();
+    onClose();
     navigate('/');
   };
 

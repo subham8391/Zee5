@@ -8,43 +8,47 @@
     flex-wrap: wrap;
     flex-direction: row;
     /* background-color: rgb(29, 80, 124); */
-    margin-top: 68px;
-    padding: 0 20px;
-    /* height: 180vh; */
+    margin-top: 4.25rem;
+    padding: 0 1.25rem;
+    height: auto;
+    width: 100%;
 }
 .v-cont{
     display: flex;
     flex-direction: column;
-    height: 600px;
-    width: 750px;
+    height: 153vh;
+    width:65%;
+    max-width: 65%;
     /* background-color: rgb(156, 63, 63); */
 }
 .vid-con{
-    height: 450px;
-    width: 750px;
+    height: 50%;
+    width: 100%;
     /* background-color: aqua; */
 }
 
 .vid-det{
-    
+    height: 50%;
+    width: 100%;
     /* background-color: yellowgreen; */
     text-transform: capitalize;
     color: aliceblue;
 }
 .m-title{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
     font-weight: bolder;
     
 }
 .r-cont{
     display: flex;
     flex-direction: column;
-    padding:0 30px ;
+    padding:0 10px;
     /* background-color: rgb(117, 24, 160); */
     overflow: scroll;
     height: 153vh;
-    
+    width: 35%;
+    max-width: 35%;
 }
 
 .r-cont.r-cont::-webkit-scrollbar {
@@ -97,7 +101,7 @@
     padding-bottom: 20px;
 }
 .v-ac-btn{
-    height: 100px;
+    height: 6.25rem;
     /* width: 100px; */
     background-color: rgb(23, 23, 37);
     display: flex;
@@ -157,3 +161,88 @@
     background-color: blue;
     height: 500px;
 } */
+
+
+@media (max-width: 768px) {
+    .v-top {
+      flex-direction: column; /* Stack content vertically for smaller screens */
+    }
+  
+    .v-cont {
+        max-width: 100%;
+      width: 100%; /* Make the video container full width */
+      height: auto; /* Adjust the height as needed */
+    }
+    .r-cont{
+        display: none;
+    }
+    .vid-con {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Adjust other styles as needed for smaller screens */
+    .m-title {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 24px; 
+    }
+    .v-tca,
+    .v-genre,
+    .v-ac-con,
+    .v-cast,
+    .v-dir,
+    .v-descrip {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .v-ac-btn {
+      height: auto;
+      width: 100%;
+      font-size: 24px; /* Increase font size for readability on mobile */
+      padding: 10px 0;
+    }
+  
+    .v-ac-btn span {
+      font-size: 16px; /* Increase font size for readability on mobile */
+    }
+  }
+  @media (max-width: 1024px) {
+    .v-top {
+      flex-direction: column; /* Stack content vertically for smaller screens */
+    }
+  
+    .v-cont {
+        max-width: 100%;
+      width: 100%; /* Make the video container full width */
+      height: auto; /* Adjust the height as needed */
+    }
+    .r-cont{
+        max-width: 100%;
+        width: 100%;
+        
+    }
+    .vid-con {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Adjust other styles as needed for smaller screens */
+    .m-title {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 24px; 
+    }
+    .v-tca,
+    .v-genre,
+    .v-cast,
+    .v-dir,
+    .v-descrip {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .v-ac-btn span {
+      font-size: 16px; /* Increase font size for readability on mobile */
+    }
+  }

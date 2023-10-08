@@ -20,25 +20,31 @@ const SightBarModal = ({ isOpen, onClose }) => {
     return () => {
       window.removeEventListener('click', closeOnOutsideClick);
     };
-  }, [onClose]);
+  }, [isOpen]);
+
+  const handleCloseModal = () => {
+    onClose();
+  };
+
+
   return (
-    <div className={`sight-bar-modal ${isOpen ? 'open' : ''}`}>
+    <div  className={`sight-bar-modal ${isOpen ? 'open' : ''}`}>
       <button className="close-button" onClick={onClose}>
         <AiFillCloseCircle />
       </button>
       <div className="sight-bar-modal-content">
 
-        <div style={{ marginTop: '10px', paddingLeft: '15px' }}><Link style={{ textDecoration: 'none', fontSize: '18px', color: 'white' }} to='/'>Home</Link></div>
+        <div style={{ marginTop: '10px', paddingLeft: '15px' }}><Link onClick={handleCloseModal} style={{ textDecoration: 'none', fontSize: '18px', color: 'white' }} to='/'>Home</Link></div>
         <hr className='tab-item-hr' />
-        <Explore />
+        <Explore onClose={handleCloseModal}/>
         <hr className='tab-item-hr' />
-        <Plans />
+        <Plans onClose={handleCloseModal}/>
         <hr className='tab-item-hr' />
-        <Setting />
+        <Setting onClose={handleCloseModal}/>
         <hr className='tab-item-hr' />
-        <div style={{ marginTop: '10px', paddingLeft: '15px' }}><Link style={{ textDecoration: 'none', fontSize: '16px', color: 'white' }} to='/Refer_Earn_Discount'>Refer and Earn and Discount</Link></div>
+        <div style={{ marginTop: '10px', paddingLeft: '15px' }}><Link onClick={handleCloseModal} style={{ textDecoration: 'none', fontSize: '16px', color: 'white' }} to='/Refer_Earn_Discount'>Refer and Earn and Discount</Link></div>
         <hr className='tab-item-hr' />
-        <Info />
+        <Info onClose={handleCloseModal}/>
         <hr className='tab-item-hr' />
         <div style={{ marginTop: '10px', textAlign: 'center' }}>Version 4.6.3</div>
 

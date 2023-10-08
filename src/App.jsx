@@ -23,7 +23,8 @@ import Watchlist from './myaccount/Watchlist';
 import PrivateRoute from './PrivateRoute';
 import WatchlistButton from './contentdetails/WatchlistButton';
 import UserModal from './components/UserModal';
-
+import SearchResults from './components/SearchResults';
+// import SearchBar from './components/SearchBar';
 
 function App() {
 
@@ -34,8 +35,9 @@ function App() {
 
         <div>
           <NavigationBar />
-
           <Routes>
+            
+            <Route path="/search" element={<SearchResults />} />
             <Route path="/more/:apiEndpoint/:filterType/:heading" element={<More />} />
             <Route path="/details/:type/:id" element={<ContentDetails />} />
             <Route path="/" exact element={<Home />} />

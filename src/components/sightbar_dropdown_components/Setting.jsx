@@ -1,6 +1,6 @@
 import React from 'react'
 import SightDropdown from './Sight_Dropdown_Creater';
-function Setting() {
+function Setting({onClose}) {
     const sightDropcontent = [
         { id: 1, name: 'Reset settings to default', path: '/resetsettings' },
 
@@ -8,7 +8,7 @@ function Setting() {
       const headder='Setting';
       return (
         <>
-          <SightDropdown heading={headder} content={sightDropcontent} />
+          <SightDropdown heading={headder} content={sightDropcontent} onClose={onClose} />
         </>
       );
 }

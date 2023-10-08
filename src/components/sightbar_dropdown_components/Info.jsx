@@ -1,6 +1,6 @@
 import React from 'react'
 import SightDropdown from './Sight_Dropdown_Creater';
-function Info() {
+function Info({onClose}) {
     const sightDropcontent = [
         { id: 1, name: 'About Us', path: '/aboutus' },
         { id: 2, name: 'Help Center', path: '/helpcenter' },
@@ -12,7 +12,7 @@ function Info() {
       const headder='Info';
       return (
         <>
-          <SightDropdown heading={headder} content={sightDropcontent} />
+          <SightDropdown heading={headder} content={sightDropcontent} onClose={onClose} />
         </>
       );
 }

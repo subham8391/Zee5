@@ -1,6 +1,6 @@
 import React from 'react';
 import SightDropdown from './Sight_Dropdown_Creater';
-function Explore() {
+function Explore({onClose}) {
  
   const sightDropcontent = [
     { id: 1, name: 'TV Shows', path: '/tvshows' },
@@ -21,7 +21,7 @@ function Explore() {
   const headder='Explore';
   return (
     <>
-      <SightDropdown heading={headder} content={sightDropcontent} />
+      <SightDropdown heading={headder} content={sightDropcontent} onClose={onClose}/>
     </>
   );
 }

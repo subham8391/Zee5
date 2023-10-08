@@ -21,9 +21,12 @@ const UserModal = ({ onClose }) => {
     return () => {
       window.removeEventListener('click', closeOnOutsideClick);
     };
-  }, [onClose]);
-
-  // Conditionally render the modal based on authentication
+  }, []);
+  
+  const handleClose=()=>{
+     onClose();
+  }
+ 
   if (!isAuthenticated) {
     return null; // If not authenticated, don't render the modal
   }
@@ -32,7 +35,7 @@ const UserModal = ({ onClose }) => {
     <div className="user-modal">
       <div className="modal-content">
         <div className="uma-sec">
-          <Link to="/account/profile" className="umc-head">
+          <Link onClick={handleClose} to="/account/profile" className="umc-head">
             <div className="umc-pi-un">
               <FaCircleUser className="umc-icon" />
               <p className="umc-name">{storedUserName}</p>
@@ -41,7 +44,7 @@ const UserModal = ({ onClose }) => {
           </Link>
         </div>
         <div className="umaf-sec">
-          <UserDropdownSelect />
+          <UserDropdownSelect onClose={handleClose}/>
           <hr className='tab-item-hr' />
           <div style={{ marginTop: '10px' }}>Version 4.6.3</div>
         </div>

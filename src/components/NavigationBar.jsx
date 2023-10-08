@@ -1,31 +1,24 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Auth from '../auth';
 import logo from '../images/zee5-logo-A4464FCB2C-seeklogo.com.png';
-
-import { FaBars,FaCircleUser } from 'react-icons/fa6';
+import { FaBars, FaCircleUser } from 'react-icons/fa6';
 import { BiSolidCrown } from "react-icons/bi";
 import { BsGrid3X3GapFill } from 'react-icons/bs';
 import { TbLanguageHiragana } from 'react-icons/tb';
-import { RiCloseLine } from "react-icons/ri";
 import { navbarLinks } from '../ConstentData';
-import SearchDropdown from './SearchDropdown';
 import UserModal from './UserModal';
 import SightBarModal from './SightBarModal';
+import SearchBar from './SearchBar'; 
 import './navigationdar.css';
 
 const NavigationBar = () => {
   const isAuthenticated = Auth.isAuthenticated();
 
-  const [searchQuery, setSearchQuery] = useState('');
   const [showGenres, setShowGenres] = useState(false);
-  const [isInputFocused, setIsInputFocused] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [recentSearches, setRecentSearches] = useState([]);
-  const [trendingTopics, setTrendingTopics] = useState([]);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const location = useLocation();
-  const scSearchRef = useRef(null);
   const [isUserModalOpen, setIsUserModalOpen] = useState(false);
   const [isSightBarModalOpen, setIsSightBarModalOpen] = useState(false);
 
@@ -41,66 +34,12 @@ const NavigationBar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (scSearchRef.current && !scSearchRef.current.contains(e.target)) {
-        // Click occurred outside of sc-search, close the modal
-        setShowDropdown(false);
-        setIsInputFocused(false);
-        
-      }
-    };
-
-    window.addEventListener('click', handleOutsideClick);
-
-    return () => {
-      window.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
-
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    console.log(`Search query submitted: ${searchQuery}`);
-
-    // Update recent searches (you can store them in local state or elsewhere)
-    setRecentSearches([...recentSearches, searchQuery]);
-
-    // Clear the search input
-    setSearchQuery('');
-
-    // Close the dropdown
-    setShowDropdown(false);
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      handleSearchSubmit(e);
-    }
-  };
-
   const toggleGenresDropdown = () => {
     setShowGenres(!showGenres);
   };
 
   const closeGenresDropdown = () => {
     setShowGenres(false);
-  };
-
-  const handleInputFocus = () => {
-    setIsInputFocused(true);
-    setShowDropdown(true);
-  };
-
-  // const handleInputBlur = () => {
-  //   setIsInputFocused(false);
-  // };
-
-  const handleClearButtonClick = () => {
-    setSearchQuery(''); // Clear the input field
   };
 
   const openUserModal = () => {
@@ -110,9 +49,9 @@ const NavigationBar = () => {
   const closeUserModal = () => {
     setIsUserModalOpen(false);
   };
-  
-   // Open SightBarModal
-   const openSightBarModal = () => {
+
+  // Open SightBarModal
+  const openSightBarModal = () => {
     setIsSightBarModalOpen(true);
   };
 
@@ -126,8 +65,7 @@ const NavigationBar = () => {
       <Link
         to={link.path}
         key={link.path}
-        className={`${isSubNavbarLink ? 'sub-navbar-link' : 'navbar-link'} ${location.pathname === link.path ? 'active' : ''
-          }`}
+        className={`${isSubNavbarLink ? 'sub-navbar-link' : 'navbar-link'} ${location.pathname === link.path ? 'active' : ''}`}
       >
         {link.label}
       </Link>
@@ -148,6 +86,7 @@ const NavigationBar = () => {
 
   const moreLinks = navbarLinks.slice(numLinksInNavbar);
   const path = location.pathname;
+
   return (
     <>
       {!(path === '/login' || path === '/signup') && (
@@ -169,7 +108,6 @@ const NavigationBar = () => {
                   className="dropdown"
                   onMouseEnter={toggleGenresDropdown}
                   onMouseLeave={closeGenresDropdown}
-
                 >
                   <button className="view-more" active>
                     <BsGrid3X3GapFill />
@@ -183,47 +121,19 @@ const NavigationBar = () => {
               )}
             </div>
             <div className="con-right">
-              <div className="sc-search" ref={scSearchRef}>
-                <form
-                  onSubmit={handleSearchSubmit}
-                  className={`search-bar ${isInputFocused ? 'input-focused' : ''
-                    }`}
-                >
-                  <input
-                    type="search"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    onKeyDown={handleKeyDown}
-                    onFocus={handleInputFocus}
-                  />
-                  {searchQuery.length > 0 && (
-                    <button className="clear-button" onClick={handleClearButtonClick}>
-                      <RiCloseLine />
-                    </button>
-                  )}
-                </form>
-                {showDropdown && (
-                  <SearchDropdown
-                    recentSearches={recentSearches}
-                    trendingTopics={trendingTopics}
-                    isFocused={isInputFocused}
-                  />
-                )}
-              </div>
+              <SearchBar />
               <div className="language">
                 <TbLanguageHiragana />
               </div>
               <div className="auth-buttons">
-              {isAuthenticated ? ( // Check if the user is authenticated
+                {isAuthenticated ? (
                   <div className='user-btn' onClick={openUserModal}><FaCircleUser /></div> 
-                  
                 ) : (
                   <Link to="/login" className='lin-btn'>Login</Link> 
                 )}
                 <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
               </div>
-               <div className="sightbar" onClick={openSightBarModal}>
+              <div className="sightbar" onClick={openSightBarModal}>
                 <FaBars />
               </div>
             </div>
