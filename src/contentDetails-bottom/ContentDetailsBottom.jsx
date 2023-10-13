@@ -1,5 +1,5 @@
 import React from 'react'
-import './contentDetails_Bottom.css'
+import './contentDetailsBottom.css'
 import { Link } from 'react-router-dom';
 import { FaChevronRight } from "react-icons/fa6";
 import Carousel from '../carousal/Carousal'

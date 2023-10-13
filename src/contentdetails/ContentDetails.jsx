@@ -5,7 +5,7 @@ import { BsFillCircleFill ,BsFillPlayCircleFill} from "react-icons/bs";
 import { FaShare } from "react-icons/fa6";
 import WatchlistButton from './WatchlistButton';
 import './contentdetails.css';
-import ContentDetails_Bottom from '../contentDetails-bottom/ContentDetails_Bottom';
+import ContentDetailsBottom from '../contentDetails-bottom/ContentDetailsBottom';
 
 function ContentDetails() {
   const { id, type } = useParams();
@@ -96,7 +96,7 @@ function ContentDetails() {
           )}
         </div>
         <div className="v-bottom">
-         <ContentDetails_Bottom />
+         <ContentDetailsBottom />
         </div>
 
       </div>
