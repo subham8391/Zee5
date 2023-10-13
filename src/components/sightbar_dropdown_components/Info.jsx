@@ -1,5 +1,5 @@
 import React from 'react'
-import SightDropdown from './Sight_Dropdown_Creater';
+import SightDropdown from './SightDropdownCreater';
 function Info({onClose}) {
     const sightDropcontent = [
         { id: 1, name: 'About Us', path: '/aboutus' },

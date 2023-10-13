@@ -1,5 +1,5 @@
 import React from 'react';
-import DropdownCheckbox_builder from './DropdownCheckboxBuilder';
+import DropdownCheckboxBuilder from './DropdownCheckboxBuilder';
 
 const options = [
   { label: 'Action', value: 'Action' },
@@ -15,9 +15,9 @@ const options = [
   { label: 'Mystery', value: 'Mystery' },
 ];
 const head='Genres';
-function Genres_dropdown({ selectedOptions, onSelect }) {
+function GenresDropdown({ selectedOptions, onSelect }) {
   return (
-    <DropdownCheckbox_builder
+    <DropdownCheckboxBuilder
       head={head}
       options={options}
       selectedOptions={selectedOptions}
@@ -26,4 +26,4 @@ function Genres_dropdown({ selectedOptions, onSelect }) {
   );
 }
 
-export default Genres_dropdown;
+export default GenresDropdown;

@@ -1,7 +1,7 @@
 import React from 'react';
 import DropdownCheckboxBuilder from './DropdownCheckboxBuilder';
 
-function Cast_dropdown({ selectedOptions, onSelect }) {
+function CastDropdown({ selectedOptions, onSelect }) {
   const options = [
     { label: 'Ella Wilson', value: 'Ella Wilson' },
     { label: 'Ryan Taylor', value: 'Ryan Taylor' },
@@ -21,4 +21,4 @@ function Cast_dropdown({ selectedOptions, onSelect }) {
   );
 }
 
-export default Cast_dropdown;
+export default CastDropdown;

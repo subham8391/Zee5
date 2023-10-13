@@ -1,5 +1,5 @@
 import React from 'react';
-import SightDropdown from './Sight_Dropdown_Creater';
+import SightDropdown from './SightDropdownCreater';
 function Explore({onClose}) {
  
   const sightDropcontent = [

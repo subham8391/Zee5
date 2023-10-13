@@ -1,5 +1,5 @@
 import React from 'react'
-import SightDropdown from './Sight_Dropdown_Creater';
+import SightDropdown from './SightDropdownCreater';
 function Plans({onClose}) {
     const sightDropcontent = [
         { id: 1, name: 'Buy Plan', path: '/buyplan' },

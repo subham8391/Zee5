@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import { AiOutlineClose } from "react-icons/ai";
-import './search-dropdown-checkbox.css';
+import './searchdropdowncheckbox.css';
 
 const DropdownCheckboxBuilder = ({ head, options, selectedOptions, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);

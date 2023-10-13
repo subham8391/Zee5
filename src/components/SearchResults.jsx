@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { FaPlay } from "react-icons/fa6";
 import { PiShareFat } from "react-icons/pi";
-import Cast_dropdown from './search_dropdown_checkbox/Cast_dropdown';
-import Contenttype_dropdown from './search_dropdown_checkbox/Contenttype_dropdown';
-import Genres_dropdown from './search_dropdown_checkbox/Genres_dropdown';
+import CastDropdown from './search_dropdown_checkbox/CastDropdown';
+import ContenttypeDropdown from './search_dropdown_checkbox/ContenttypeDropdown';
+import GenresDropdown from './search_dropdown_checkbox/GenresDropdown';
 
 const SearchResults = () => {
   const location = useLocation();
@@ -125,9 +125,9 @@ const SearchResults = () => {
       <div className="search-result-section">
         <h4 className='search-q'>Search Results for: {query}</h4>
         <div className="search-result-by-select">
-          <Cast_dropdown selectedOptions={selectedOptions.cast} onSelect={handleCastSelect} />
-          <Genres_dropdown selectedOptions={selectedOptions.genres} onSelect={handleGenresSelect} />
-          <Contenttype_dropdown selectedOptions={selectedOptions.contenttype} onSelect={handleContenttypeSelect} />
+          <CastDropdown selectedOptions={selectedOptions.cast} onSelect={handleCastSelect} />
+          <GenresDropdown selectedOptions={selectedOptions.genres} onSelect={handleGenresSelect} />
+          <ContenttypeDropdown selectedOptions={selectedOptions.contenttype} onSelect={handleContenttypeSelect} />
           <button className='sfr-btn' disabled={!isApplyActive} onClick={applyFilters}>Apply</button>
           {isClearAllVisible && (
             <button className='sfr-btn' onClick={() =>{setSelectedOptions({ cast: [], contenttype: [], genres: [] });fetchSearchResults(); }}>Clear All</button>

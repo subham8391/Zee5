@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
-import './sightbar-dropdown.css'
+import './sightbardropdown.css'
 
-function Sight_Dropdown_Creater({ heading,content,onClose }) {
+function SightDropdownCreater({ heading,content,onClose }) {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
     const toggleSightbarDropdown = () => {
@@ -40,4 +40,4 @@ function Sight_Dropdown_Creater({ heading,content,onClose }) {
     );
 }
 
-export default Sight_Dropdown_Creater
+export default SightDropdownCreater

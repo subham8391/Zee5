@@ -1,5 +1,5 @@
 import React from 'react';
-import DropdownCheckbox_builder from './DropdownCheckboxBuilder';
+import DropdownCheckboxBuilder from './DropdownCheckboxBuilder';
 
 const options = [
   { label: 'Movie', value: 'Movie' },
@@ -10,9 +10,9 @@ const options = [
   { label: 'Trailer', value: 'Trailer' },
 ];
 const head='Content Type';
-function Contenttype_dropdown({ selectedOptions, onSelect }) {
+function ContenttypeDropdown({ selectedOptions, onSelect }) {
   return (
-    <DropdownCheckbox_builder
+    <DropdownCheckboxBuilder
       head={head}
       options={options}
       selectedOptions={selectedOptions}
@@ -21,4 +21,4 @@ function Contenttype_dropdown({ selectedOptions, onSelect }) {
   );
 }
 
-export default Contenttype_dropdown;
+export default ContenttypeDropdown;
