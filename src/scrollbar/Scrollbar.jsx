@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useRef,useReducer } from 'react'
+import React, { useState,useEffect } from 'react'
 import './scrollbar.css'
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css"; 
@@ -19,6 +19,8 @@ function Scrollbar({ imageUrls}) {
           perPage: 1,
           autoplay: true, 
           interval: 2000, 
+          padding: '8rem',
+          gap:5,
           breakpoints: {
            
             768: {

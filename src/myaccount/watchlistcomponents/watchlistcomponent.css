@@ -2,18 +2,18 @@
 
 .watchlist-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust the minmax values as needed */
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Adjust the minmax values as needed */
   gap: 20px;
   /* height: 70vh; */
   justify-content: center; 
   align-content: start;
-/*  
-  background-color: aqua; */
+ 
+  /* background-color: aqua; */
 }
   
   .watchlist-item {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     text-align: center;
     width: 400px;
     height: 120px;

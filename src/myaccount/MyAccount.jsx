@@ -22,6 +22,7 @@ function MyAccount() {
     { label: 'Subscription', heading: 'My Subscriptions', tabName: 'subscription' },
     { label: 'Rentals', heading: 'My Rentals', tabName: 'rentals' },
     { label: 'Transaction', heading: 'My Transactions', tabName: 'transaction' },
+    
   ];
 
   const handleTabClick = (tabName) => {

@@ -165,3 +165,41 @@
 .image-cont:hover .details {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  .image-cont {
+    max-width: 180px; 
+    max-height: 250px;
+    
+  }
+  .image-cont:hover {
+    transform: none;
+    
+  }
+  .image-cont:hover .item{
+    border:none;
+  }
+  
+  .image-cont:hover .details {
+    display: none;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .image-cont {
+    max-width: 150px; 
+    max-height: 200px;
+  }
+  .image-cont:hover {
+    transform: none;
+    
+  }
+  .image-cont:hover .item{
+    border:none;
+  }
+  
+  .image-cont:hover .details {
+    display: none;
+  }
+}

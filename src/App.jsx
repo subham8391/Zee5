@@ -24,7 +24,8 @@ import PrivateRoute from './PrivateRoute';
 import WatchlistButton from './contentdetails/WatchlistButton';
 import UserModal from './components/UserModal';
 import SearchResults from './components/SearchResults';
-// import SearchBar from './components/SearchBar';
+
+
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
         <div>
           <NavigationBar />
           <Routes>
-            
+
             <Route path="/search" element={<SearchResults />} />
             <Route path="/more/:apiEndpoint/:filterType/:heading" element={<More />} />
             <Route path="/details/:type/:id" element={<ContentDetails />} />
@@ -50,6 +51,7 @@ function App() {
 
             <Route path="/account" element={<PrivateRoute> <MyAccount /> </PrivateRoute>} >
               <Route path="/account/profile" element={<PrivateRoute> <Profile /> </PrivateRoute>} />
+                
               <Route path="/account/rentals" element={<PrivateRoute> <Rentals /> </PrivateRoute>} />
               <Route path="/account/subscription" element={<PrivateRoute> <Subscription /> </PrivateRoute>} />
               <Route path="/account/transaction" element={<PrivateRoute> <Transaction /> </PrivateRoute>} />

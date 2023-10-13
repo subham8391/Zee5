@@ -27,8 +27,7 @@
 
 .carousel-item {
   width: 100%;
-  height: auto; 
-  max-height: 430px; 
+  height: 70vh; 
   background: #0f0024;
 }
 
@@ -76,7 +75,7 @@
 
   .carousel-item {
     width: 100%;
-    max-height: none; 
+    height: auto;
   }
 
   .carousel-prev,

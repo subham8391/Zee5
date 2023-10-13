@@ -1,24 +1,32 @@
 import React from 'react';
 import Tranding from './Tranding';
+import { AiOutlineClose } from "react-icons/ai";
 
-const SearchDropdown = ({ recentSearches, trendingTopics, suggestionResults, isFocused, onClearRecentSearches, onQueryClick }) => {
+const SearchDropdown = ({ recentSearches, trendingTopics, suggestionResults, isFocused, onClearRecentSearches,onDeleteRecentSearch, onQueryClick }) => {
   const isSearchResultsEmpty = suggestionResults.length === 0;
   const isRecentSearchesEmpty = recentSearches.length === 0;
-  // const isInputEmpty = isSearchResultsEmpty && isRecentSearchesEmpty;
-
+  
   return (
     <div className={`search-dropdown ${isFocused ? 'input-focused' : ''}`}>
 
       {isSearchResultsEmpty ? (
         isRecentSearchesEmpty ? null : (
           <div className="recent-searches">
+            <div className="rs-head">
             <h3>Recent Searches</h3>
+            <button onClick={onClearRecentSearches}>Clear All</button>
+            </div>
+            
             <ul>
               {recentSearches.map((search, index) => (
-                <li key={index} onClick={() => onQueryClick(search)}>{search}</li>
+                
+                <li key={index} onClick={() => onQueryClick(search)}>{search}
+                <button onClick={() => {onDeleteRecentSearch(index); return false}}><AiOutlineClose /></button>
+                </li>
+                
               ))}
             </ul>
-            <button onClick={onClearRecentSearches}>Clear</button>
+           
           </div>
         )
       ) : (
@@ -26,7 +34,7 @@ const SearchDropdown = ({ recentSearches, trendingTopics, suggestionResults, isF
           <h3>Search Results</h3>
           <ul>
             {suggestionResults.map((result, index) => (
-              <li style={{ color: 'white' }} key={index} onClick={() => onQueryClick(result.title)}>{result.title}</li>
+              <li style={{ color: 'white',cursor: 'pointer' }} key={index} onClick={() => onQueryClick(result.title)}>{result.title}</li>
             ))}
           </ul>
         </div>
