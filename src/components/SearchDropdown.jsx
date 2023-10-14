@@ -1,14 +1,16 @@
-import React from 'react';
+import React,{useState, useEffect, useRef } from 'react';
 import Tranding from './Tranding';
 import { AiOutlineClose } from "react-icons/ai";
 
 const SearchDropdown = ({ recentSearches, trendingTopics, suggestionResults, isFocused, onClearRecentSearches,onDeleteRecentSearch, onQueryClick }) => {
+  
   const isSearchResultsEmpty = suggestionResults.length === 0;
   const isRecentSearchesEmpty = recentSearches.length === 0;
   
   return (
+    <div className={`search-dropdown-backdrop ${isFocused ? 'input-focused' : ''}`}>
     <div className={`search-dropdown ${isFocused ? 'input-focused' : ''}`}>
-
+      
       {isSearchResultsEmpty ? (
         isRecentSearchesEmpty ? null : (
           <div className="recent-searches">
@@ -50,6 +52,7 @@ const SearchDropdown = ({ recentSearches, trendingTopics, suggestionResults, isF
         </div>
       ) : null}
     </div>
+    </div> 
   );
 };
 
