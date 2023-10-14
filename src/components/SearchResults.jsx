@@ -17,7 +17,7 @@ const SearchResults = () => {
   });
   const [isApplyActive, setIsApplyActive] = useState(false);
   const [isClearAllVisible, setIsClearAllVisible] = useState(false);
-  const [filteredResults, setFilteredResults] = useState([]);
+
 
   const fetchSearchResults = async () => {
     try {
@@ -78,7 +78,7 @@ const SearchResults = () => {
       }
 
       const filteredData = await response.json();
-      setFilteredResults(filteredData.data);
+      setSearchResults(filteredData.data);
     } catch (error) {
       console.error('Error fetching filtered results:', error);
     }
@@ -134,8 +134,8 @@ const SearchResults = () => {
           )}
         </div>
         <div className="search-results-grid">
-          {filteredResults.length > 0
-            ? filteredResults.map((result) => (
+          {searchResults.length > 0
+            ? searchResults.map((result) => (
                 <div key={result._id} className="search-results-grid-item">
                   {/* Display each filtered result item */}
                   <div className="sr-image">

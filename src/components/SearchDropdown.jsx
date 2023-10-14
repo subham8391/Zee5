@@ -8,7 +8,7 @@ const SearchDropdown = ({ recentSearches, trendingTopics, suggestionResults, isF
   const isRecentSearchesEmpty = recentSearches.length === 0;
   
   return (
-    <div className={`search-dropdown-backdrop ${isFocused ? 'input-focused' : ''}`}>
+    // <div className={`search-dropdown-backdrop ${isFocused ? 'input-focused' : ''}`}>
     <div className={`search-dropdown ${isFocused ? 'input-focused' : ''}`}>
       
       {isSearchResultsEmpty ? (
@@ -52,7 +52,7 @@ const SearchDropdown = ({ recentSearches, trendingTopics, suggestionResults, isF
         </div>
       ) : null}
     </div>
-    </div> 
+    // </div> 
   );
 };
 

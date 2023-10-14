@@ -313,8 +313,8 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 .search-dropdown {
   position: absolute;
- 
-  right: 23rem;
+  top: 100%;
+  /* right: 23rem; */
   background-color: #0a0018;
   border: 1px solid #ccc;
   border-top: none;
