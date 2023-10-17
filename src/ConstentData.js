@@ -132,7 +132,7 @@ export const navbarLinks = [
 
 export const carouselHomeData = [
     {
-      apiEndpoint: 'https://academics.newtonschool.co/api/v1/ott/show?page=2&limit=140',
+      apiEndpoint: 'https://academics.newtonschool.co/api/v1/ott/show?page=20&limit=140',
       filterType: 'movie',
       heading: 'Trending Near You',
     },

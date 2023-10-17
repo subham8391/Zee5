@@ -46,7 +46,7 @@ const SearchDropdown = ({ recentSearches, trendingTopics, suggestionResults, isF
       {isSearchResultsEmpty ? (
         <div className="trending-topics">
           <h3>Top Searches</h3>
-          <div>
+          <div className='trending-topics-holder'>
             <Tranding />
           </div>
         </div>

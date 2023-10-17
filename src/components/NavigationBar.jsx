@@ -12,6 +12,7 @@ import { navbarLinks } from '../ConstentData';
 import UserModal from './UserModal';
 import SightBarModal from './SightBarModal';
 import SearchBar from './SearchBar';
+import SearchBarWithDropdown from './SearchBarWithDropdown';
 import './navigationdar.css';
 
 const NavigationBar = () => {
@@ -61,6 +62,13 @@ const NavigationBar = () => {
     setIsSightBarModalOpen(false);
   };
 
+  const openSearchBar = () => {
+    setIsSearchBarOpen(true);
+  };
+
+  const closeSearchBar = () => {
+    setIsSearchBarOpen(false);
+  };
 
   const renderLinks = (links, isSubNavbarLink = false) =>
     links.map((link) => (
@@ -96,66 +104,84 @@ const NavigationBar = () => {
   return (
     <>
       {!(path === '/login' || path === '/signup') && (
-        <nav className="navbar">
-          <div className="nav-container">
-            <div className="con-left">
-              <div className="logo">
-                <Link to="/">
-                  <img className="logo" src={logo} alt="Logo" />
-                </Link>
-              </div>
-              <div className={`nav-link-cons ${screenWidth < 1200 ? 'scrollable' : ''}`}>
-                <ul className="nav-link">
-                  {renderLinks(navbarLinks.slice(0, numLinksInNavbar))}
-                </ul>
-              </div>
-              {moreLinks.length > 0 && (
-                <div
-                  className="dropdown"
-                  onMouseEnter={toggleGenresDropdown}
-                  onMouseLeave={closeGenresDropdown}
-                >
-                  <button className="view-more" active>
-                    <BsGrid3X3GapFill />
-                  </button>
-                  {showGenres && (
-                    <ul className="genre-dropdown">
-                      <li>{renderLinks(moreLinks, true)}</li>
-                    </ul>
-                  )}
+        <header className='apphead'>
+          <nav className="navbar">
+            <div className="nav-container">
+              <div className="con-left">
+                <div className="logo">
+                  <Link to="/">
+                    <img className="logo" src={logo} alt="Logo" />
+                  </Link>
                 </div>
-              )}
-            </div>
-            <div className="con-right">
-              {screenWidth < 1200 ? (
-                // Render a search button when the screen width is less than 1200
-                <button className="search-btn-icon" onClick={() => setIsSearchBarOpen(!isSearchBarOpen)}>
-                  <FaSearch />
-                </button>
-              ) : (
-                <SearchBar />
-              )}
-              <div className="language">
-                <TbLanguageHiragana />
-              </div>
-              <div className="auth-buttons">
-                {isAuthenticated ? (
-                  <div className='user-btn' onClick={openUserModal}><FaCircleUser /></div>
-                ) : (
-                  <Link to="/login" className='lin-btn'>Login</Link>
-                )}
+                <div className={`nav-link-cons ${screenWidth < 1200 ? 'scrollable' : ''}`}>
+                  <ul className="nav-link">
+                    {renderLinks(navbarLinks.slice(0, numLinksInNavbar))}
+                  </ul>
+                </div>
+                <div className="bp-dtn-2">
                 <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
+                </div>
+                {moreLinks.length > 0 && (
+                  <div
+                    className="dropdown"
+                    onMouseEnter={toggleGenresDropdown}
+                    onMouseLeave={closeGenresDropdown}
+                  >
+                    <button className="view-more" active>
+                      <BsGrid3X3GapFill />
+                    </button>
+                    {showGenres && (
+                      <ul className="genre-dropdown">
+                        <li>{renderLinks(moreLinks, true)}</li>
+                      </ul>
+                    )}
+                  </div>
+                )}
               </div>
-              <div className="sightbar" onClick={openSightBarModal}>
-                <FaBars />
+              <div className="con-right">
+                {screenWidth < 1200 ? (
+                  // Render a search button when the screen width is less than 1200
+                  <button className="search-btn-icon" onClick={openSearchBar}>
+                    <FaSearch />
+                  </button>
+                ) : (
+                  <SearchBar />
+                )}
+                <div className="language">
+                  <TbLanguageHiragana />
+                </div>
+                <div className="auth-buttons">
+                  {isAuthenticated ? (
+                    <div className='user-btn' onClick={openUserModal}><FaCircleUser /></div>
+                  ) : (
+                    <Link to="/login" className='lin-btn'>Login</Link>
+                  )}
+                  <div className="bp-dtn-1">
+                  <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
+                  </div>
+                </div>
+                <div className="sightbar" onClick={openSightBarModal}>
+                  <FaBars />
+                </div>
               </div>
             </div>
+          </nav>
+          <div>
+            <div className="en-menu">
+          <div className={`en-menu-link ${screenWidth < 1000 ? 'scrollable-en-menu' : ''}`}>
+            <ul className="nav-link">
+              {renderLinks(navbarLinks.slice(0, numLinksInNavbar))}
+            </ul>
           </div>
-        </nav>
+          </div>
+          </div>
+        </header>
       )}
       {isUserModalOpen && <UserModal onClose={closeUserModal} />}
       {isSightBarModalOpen && <SightBarModal isOpen={isSightBarModalOpen} onClose={closeSightBarModal} />}
-      {isSearchBarOpen && <SearchBar />}
+      {isSearchBarOpen && <SearchBarWithDropdown onClose={closeSearchBar
+
+      } />}
     </>
   );
 };

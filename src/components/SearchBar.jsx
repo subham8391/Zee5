@@ -44,7 +44,7 @@ const SearchBar = () => {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'projectID': 'qkwqr7ns3d9d' 
+          'projectID': 'qkwqr7ns3d9d'
         }
       });
 
@@ -67,7 +67,7 @@ const SearchBar = () => {
     if (inputQuery) {
       setShowDropdown(true);
     }
-   
+
 
     // Clear the previous debounce timeout
     if (debounceTimeout) {
@@ -77,7 +77,7 @@ const SearchBar = () => {
     // Set a new debounce timeout
     const newDebounceTimeout = setTimeout(() => {
       setDebouncedSearchQuery(inputQuery);
-    }, 500); 
+    }, 500);
 
     setDebounceTimeout(newDebounceTimeout);
   };
@@ -114,9 +114,9 @@ const SearchBar = () => {
     setRecentSearches([]);
     localStorage.removeItem('recentSearches');
   };
-  
-   // Function to delete a single recent search by index
-   const handleDeleteRecentSearch = (index) => {
+
+  // Function to delete a single recent search by index
+  const handleDeleteRecentSearch = (index) => {
     const updatedRecentSearches = [...recentSearches];
     updatedRecentSearches.splice(index, 1);
     setRecentSearches(updatedRecentSearches);
@@ -135,7 +135,7 @@ const SearchBar = () => {
     setShowDropdown(false);
   };
 
-  
+
   const handleInputFocus = () => {
     setIsInputFocused(true);
     setShowDropdown(true);
@@ -150,21 +150,21 @@ const SearchBar = () => {
 
   return (
     <div className="sc-search" ref={scSearchRef}>
-      
+
       <div className={`search-bar ${isInputFocused ? 'input-focused' : ''}`}>
-      
-      <form style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',gap:'5px'}} onSubmit={handleSearchSubmit} >
-      <FaSearch />
-        <input
-          type="search"
-          placeholder="Search..."
-          value={searchQuery}
-          onChange={handleSearchChange}
-          onKeyDown={handleKeyDown}
-          onFocus={handleInputFocus}
-        />
-      </form>
-      {searchQuery.length > 0 && (
+       <FaSearch />
+        <form className='search-bar-input' onSubmit={handleSearchSubmit} >
+         
+          <input
+            type="search"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+            onKeyDown={handleKeyDown}
+            onFocus={handleInputFocus}
+          />
+        </form>
+        {searchQuery.length > 0 && (
           <button className="clear-button" onClick={handleClearButtonClick}>
             <RiCloseLine />
           </button>
@@ -178,7 +178,7 @@ const SearchBar = () => {
           isFocused={isInputFocused}
           onClearRecentSearches={handleClearRecentSearches}
           onDeleteRecentSearch={handleDeleteRecentSearch}
-          onQueryClick={handleQueryClick} 
+          onQueryClick={handleQueryClick}
         />
       )}
     </div>
