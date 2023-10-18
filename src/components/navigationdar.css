@@ -130,6 +130,10 @@
 .bp-dtn-2{
   display: none;
 }
+.bp-dtn-3{
+  display: none;
+  
+}
 .bp-btn {
   padding: 10px;
   font-weight: bolder;
@@ -476,7 +480,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .uma-sec {
-  max-width: 250px;
+  /* max-width: 250px; */
   width: 100%;
   padding: 10px 20px;
   background-color: rgb(33, 26, 39);
@@ -521,7 +525,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .Userdropdown {
   position: relative;
   display: inline-block;
-  max-width: 250px;
+  /* max-width: 250px; */
   width: 100%;
   /* margin-bottom: 1.25rem; */
 }
@@ -577,6 +581,39 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* sight bar  */
+.sight-auth-head{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.sight-bar-header{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 45%;
+}
+.sight-close-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 50px;
+  color: #171021;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+}
+.sight-Userdropdown{
+  position: relative;
+  display: none;
+  width: 100%;
+}
+.op-hi-drop{
+  display: none;
+}
 .sight-bar-modal {
   position: fixed;
   top: 0;
@@ -595,7 +632,6 @@ input[type="search"]::-webkit-search-cancel-button {
   right: 0;
 }
 .sight-bar-modal-content {
-  overflow: scroll;
   background-color: #171021;
   color: #ffffff;
   margin-top: 70px;
@@ -607,6 +643,11 @@ input[type="search"]::-webkit-search-cancel-button {
   max-width: 20rem;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
+}
+.sight-scroll-pert{
+  overflow: scroll;
+  height: 85vh;
+
 }
 
 .sight-bar-modal.open .sight-bar-modal-content {
@@ -780,7 +821,7 @@ input[type="search"]::-webkit-search-cancel-button {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 999;
@@ -954,6 +995,27 @@ input[type="search"]::-webkit-search-cancel-button {
     max-width: 100%;
     height: auto;
   }
+  .search-modal-backdrop{
+    display: flex;
+  }
+  .sight-Userdropdown{
+    display: inline-block;
+  }
+  .op-hi-drop{
+    display: block;
+  }
+  .sight-bar-modal-content {
+  overflow: scroll;
+  background-color: #171021;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.543);
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
 }
 @media screen and (max-width: 1000px) {
 .nav-link-cons{
@@ -968,10 +1030,26 @@ input[type="search"]::-webkit-search-cancel-button {
  .bp-dtn-2{
    display: block;
  }
+ .bp-dtn-3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
  .language{
   display: none;
  }
  .auth-buttons{
   display: none;
  }
+ .sight-auth-head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close-button {
+
+  display: none;
+}
+
 }
