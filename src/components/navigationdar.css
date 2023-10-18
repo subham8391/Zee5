@@ -144,6 +144,7 @@
   align-items: center;
   border-radius: 5px;
   border: none;
+  text-decoration: none;
   background-color: rgb(152, 72, 227);
   color: white;
   gap: 2px;
@@ -591,20 +592,25 @@ input[type="search"]::-webkit-search-cancel-button {
 .sight-bar-header{
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  gap: 45%;
+  margin-bottom: 10px;
+  /* gap: 35%; */
 }
 .sight-close-btn{
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 50px;
-  color: #171021;
-  background-color: #ffffff;
+  font-size: 40px;
+  color: #ffffff;
+  background-color: #171021;
   border-radius: 50%;
   display: flex;
+  padding: 10px;
+}
+.sight-dummy{
+  padding: 30px;
 }
 .sight-Userdropdown{
   position: relative;
@@ -654,10 +660,10 @@ input[type="search"]::-webkit-search-cancel-button {
   transform: translateX(0);
 }
 
-.close-button {
+.sight-close-button {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 23px;
+  right: 25px;
   background: none;
   border: none;
   cursor: pointer;
@@ -668,7 +674,7 @@ input[type="search"]::-webkit-search-cancel-button {
   display: flex;
 }
 
-.close-button:focus {
+.sight-close-button:focus {
   outline: none;
 }
 
@@ -1005,7 +1011,6 @@ input[type="search"]::-webkit-search-cancel-button {
     display: block;
   }
   .sight-bar-modal-content {
-  overflow: scroll;
   background-color: #171021;
   color: #ffffff;
   border-radius: 8px;
@@ -1013,6 +1018,7 @@ input[type="search"]::-webkit-search-cancel-button {
   height: 100%;
   width: 100%;
   max-width: 100%;
+  margin-top: 70px;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
@@ -1035,12 +1041,16 @@ input[type="search"]::-webkit-search-cancel-button {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  gap: 20px;
 }
  .language{
   display: none;
  }
  .auth-buttons{
   display: none;
+ }
+ .sight-bar-modal-content{
+   margin-top: 0;
  }
  .sight-auth-head{
   display: flex;

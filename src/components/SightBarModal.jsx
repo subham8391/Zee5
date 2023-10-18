@@ -9,7 +9,7 @@ import MyAccountDropdown from './sightbar_dropdown_components/MyAccountDropdown'
 import Info from './sightbar_dropdown_components/Info';
 import Auth from '../auth';
 import { FaCircleUser } from 'react-icons/fa6';
-import { BiSolidCrown } from "react-icons/bi";
+import { RiCloseLine } from "react-icons/ri";
 import { IoChevronForwardOutline } from 'react-icons/io5';
 const SightBarModal = ({ isOpen, onClose }) => {
   const isAuthenticated = Auth.isAuthenticated();
@@ -37,20 +37,22 @@ const SightBarModal = ({ isOpen, onClose }) => {
 
   return (
     <div className={`sight-bar-modal ${isOpen ? 'open' : ''}`}>
-      <button className="close-button" onClick={onClose}>
+      <button className="sight-close-button" onClick={onClose}>
         <AiFillCloseCircle />
       </button>
       <div className="sight-bar-modal-content">
         <div className="sight-auth-head">
           <div className="sight-bar-header">
             <button className="sight-close-btn" onClick={onClose}>
-              <AiFillCloseCircle />
+              <RiCloseLine />
             </button>
             <div className="logo">
               <Link to="/" onClick={handleCloseModal}>
                 <img className="logo" src={logo} alt="Logo" />
               </Link>
             </div>
+            <div className="sight-dummy" ></div>
+            
           </div>
           {isAuthenticated ? (
             <div className="uma-sec">
@@ -64,8 +66,8 @@ const SightBarModal = ({ isOpen, onClose }) => {
             </div>
           ) : (
             <div className="bp-dtn-3">
-              <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
               <Link onClick={handleCloseModal} to="/login" className='lin-btn'>Login</Link>
+              <Link  className='bp-btn' onClick={handleCloseModal} to="/signup" >Sign up for free</Link>
             </div>
 
           )}
