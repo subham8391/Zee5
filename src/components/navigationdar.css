@@ -969,7 +969,7 @@ input[type="search"]::-webkit-search-cancel-button {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
   .navbar {
     padding: 10px 0 10px 0 ;
   }

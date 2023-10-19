@@ -89,10 +89,10 @@ const NavigationBar = () => {
   } else if (screenWidth < 1728 && screenWidth > 1286.4) {
     numLinksInNavbar = 5;
     numLinksInMore = 10;
-  } else if (screenWidth < 1286.4 && screenWidth > 1200) {
+  } else if (screenWidth < 1286.4 && screenWidth > 1199) {
     numLinksInNavbar = 3;
     numLinksInMore = 12;
-  } else if (screenWidth < 1200) {
+  } else if (screenWidth < 1199) {
     numLinksInNavbar = 15;
     numLinksInMore = 0;
 

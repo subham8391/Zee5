@@ -45,7 +45,7 @@ function RecommendedContent({ type }) {
   }
 
   return (
-    <>
+    <div className='reco-section'>
       <h1 className='re-heading'>Recommended {type} For You</h1>
       <div className="rc-Container">
         {recommendedContent.map((data, index) => (
@@ -69,7 +69,7 @@ function RecommendedContent({ type }) {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
