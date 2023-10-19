@@ -18,17 +18,20 @@ function Scrollbar({ imageUrls}) {
           type: "loop", 
           perPage: 1,
           autoplay: true, 
-          interval: 2000, 
+          interval: 1000, 
           padding: '8rem',
           gap:5,
           breakpoints: {
-           
+            1000:{
+              perPage: 1,
+              padding:0,
+              gap:1
+            },
             768: {
-              perPage: 2, 
-            },
-            576: {
-              perPage: 1, 
-            },
+              perPage: 1,
+              padding:0,
+              gap:1 
+            }
           },
         }}
       >

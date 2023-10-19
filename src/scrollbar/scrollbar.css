@@ -4,7 +4,9 @@
   position: relative;
   margin-top: 70px;
 }
-
+.splider {
+  padding: 8rem;
+}
 .carousel-container {
   overflow: hidden;
   scroll-behavior: smooth;
@@ -62,7 +64,7 @@
   display: none;
 }
 
-/* Media query for smaller screens (e.g., mobile devices) */
+
 @media (max-width: 768px) {
   .carousel-container {
     overflow-x: scroll; 
