@@ -246,6 +246,9 @@
   border: 1px solid white;
   cursor: pointer;
 }
+.tad-empty-desc{
+  text-align: center;
+}
 
 @media screen and (max-width: 1200px){
   .tab-header {

@@ -4,7 +4,7 @@ function Rentals() {
   return (
     <div className='tab-body'><FaFolderClosed className='tad-empty-icon' />
       <h1 className='tad-empty-desc'>You have not rented any content yet</h1>
-      <h1>Rent from our ZEEPLEX Collection and start watching</h1>
+      <h1 className='tad-empty-desc'>Rent from our ZEEPLEX Collection and start watching</h1>
     </div>
   )
 }

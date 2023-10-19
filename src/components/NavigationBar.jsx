@@ -117,7 +117,16 @@ const NavigationBar = () => {
                   </ul>
                 </div>
                 <div className="bp-dtn-2">
-                <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
+
+                  {isAuthenticated ? (
+                    <Link to="/account/subscription">
+                      <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
+                    </Link>
+                  ) : (
+                    <Link to="/login">
+                      <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
+                    </Link>
+                  )}
                 </div>
                 {moreLinks.length > 0 && (
                   <div
@@ -154,7 +163,15 @@ const NavigationBar = () => {
                     <Link to="/login" className='lin-btn'>Login</Link>
                   )}
                   <div className="bp-dtn-1">
-                  <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
+                  {isAuthenticated ? (
+                    <Link to="/account/subscription">
+                      <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
+                    </Link>
+                  ) : (
+                    <Link to="/login">
+                      <button className='bp-btn'><BiSolidCrown className='dp-btn-icon' /> BUY PLAN</button>
+                    </Link>
+                  )}
                   </div>
                 </div>
                 <div className="sightbar" onClick={openSightBarModal}>
@@ -165,12 +182,12 @@ const NavigationBar = () => {
           </nav>
           <div>
             <div className="en-menu">
-          <div className={`en-menu-link ${screenWidth < 1000 ? 'scrollable-en-menu' : ''}`}>
-            <ul className="nav-link">
-              {renderLinks(navbarLinks.slice(0, numLinksInNavbar))}
-            </ul>
-          </div>
-          </div>
+              <div className={`en-menu-link ${screenWidth < 1000 ? 'scrollable-en-menu' : ''}`}>
+                <ul className="nav-link">
+                  {renderLinks(navbarLinks.slice(0, numLinksInNavbar))}
+                </ul>
+              </div>
+            </div>
           </div>
         </header>
       )}

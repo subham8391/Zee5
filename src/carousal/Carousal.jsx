@@ -15,7 +15,7 @@ function Carousel({ apiEndpoint, filterType }) {
   const contentRef = useRef(null);
   const prevButton = useRef(null);
   const nextButton = useRef(null);
-
+  
   const updateWidth = () => {
     const newWidth = carouselRef.current.offsetWidth;
     setWidth(newWidth);
