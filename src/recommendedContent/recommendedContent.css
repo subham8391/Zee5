@@ -1,5 +1,5 @@
 .reco-section{
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .re-heading {
@@ -10,7 +10,7 @@
   }
   
   .rc-Container {
-    height: 140vh;
+  height: 142vh;
   overflow: scroll;
   display: grid;
   grid-template-rows: repeat(2, 1fr);

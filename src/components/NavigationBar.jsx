@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Auth from '../auth';
@@ -95,7 +94,6 @@ const NavigationBar = () => {
   } else if (screenWidth < 1199) {
     numLinksInNavbar = 15;
     numLinksInMore = 0;
-
   }
 
   const moreLinks = navbarLinks.slice(numLinksInNavbar);
@@ -140,7 +138,6 @@ const NavigationBar = () => {
               </div>
               <div className="con-right">
                 {screenWidth < 1200 ? (
-                  // Render a search button when the screen width is less than 1200
                   <button className="search-btn-icon" onClick={openSearchBar}>
                     <FaSearch />
                   </button>

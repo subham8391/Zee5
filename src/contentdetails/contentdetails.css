@@ -1,14 +1,12 @@
 .vid-container{
     display: flex;
     flex-direction: column;
-    
 }
 .v-top{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    /* background-color: rgb(29, 80, 124); */
-    margin-top: 4.25rem;
+    margin-top: 80px;
     padding: 0 1.25rem;
     height: auto;
     width: 100%;
@@ -28,7 +26,7 @@
 }
 
 .vid-det{
-    height: 50%;
+    height: auto;
     width: 100%;
     /* background-color: yellowgreen; */
     text-transform: capitalize;
@@ -92,29 +90,32 @@
     font-size: 20;
 }
 .g-icon{
-    font-size: 15px;
+    font-size: 10px;
     color: gray;
 }
 .v-ac-con{
     display: flex;
     flex-direction: row;
+    gap: 10px;
     padding-bottom: 20px;
 }
 .v-ac-btn{
-    height: 6.25rem;
+    /* height: 6.25rem; */
     /* width: 100px; */
-    background-color: rgb(23, 23, 37);
+    /* background-color: rgb(23, 23, 37); */
+    border: 1px solid white;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 10px;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
-    padding: 20px 30px;
+    font-size: 25px;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 10px;
 }
 .v-ac-btn span{
-    font-size: 20px;  
+    font-size: 16px;  
     color: rgb(221, 221, 221);
 }
 .v-ac-btn:hover{
@@ -150,24 +151,18 @@
     gap: 20px;
     font-size: 12px;
     padding-bottom: 20px;
-    color: blueviolet;
+    color: rgb(221, 221, 221);
+    line-height: 20px;
 }
 .v-descrip-hed{
     color: rgb(221, 221, 221);
     font-size: 20; 
 }
-/* .v-bottom{
-    margin-top: 10px;
-    background-color: blue;
-    height: 500px;
-} */
+
 
 
 @media screen and (max-width: 1199px) {
-    .v-top {
-      flex-direction: column; 
-      padding: 0;
-    }
+    
     .v-cont {
       max-width: 100%;
       width: 100%; 
@@ -181,68 +176,26 @@
       height: auto;
     }
   
-    /* Adjust other styles as needed for smaller screens */
+    .vid-det{
+      padding: 0 1.25rem;
+    }
+    .v-genre{
+      flex-wrap: wrap;
+    }
     .m-title {
       padding-top: 10px;
       padding-bottom: 10px;
       font-size: 24px; 
     }
-    .v-tca,
-    .v-genre,
-    .v-ac-con,
-    .v-cast,
-    .v-dir,
-    .v-descrip {
-      flex-direction: column;
-      gap: 10px;
-    }
+   .v-ac-con{
+    flex-wrap: wrap;
+   }
   
-    .v-ac-btn {
-      height: auto;
-      width: 100%;
-      font-size: 24px; /* Increase font size for readability on mobile */
-      padding: 10px 0;
-    }
-  
-    .v-ac-btn span {
-      font-size: 16px; /* Increase font size for readability on mobile */
-    }
   }
-  @media (max-width: 1024px) {
+  @media screen and (max-width: 1000px){
     .v-top {
-      flex-direction: column; /* Stack content vertically for smaller screens */
-    }
-  
-    .v-cont {
-        max-width: 100%;
-      width: 100%; /* Make the video container full width */
-      height: auto; /* Adjust the height as needed */
-    }
-    .r-cont{
-        max-width: 100%;
-        width: 100%;
-        
-    }
-    .vid-con {
-      width: 100%;
-      height: auto;
-    }
-  
-    /* Adjust other styles as needed for smaller screens */
-    .m-title {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      font-size: 24px; 
-    }
-    .v-tca,
-    .v-genre,
-    .v-cast,
-    .v-dir,
-    .v-descrip {
-      flex-direction: column;
-      gap: 10px;
-    }
-    .v-ac-btn span {
-      font-size: 16px; /* Increase font size for readability on mobile */
+      flex-direction: column; 
+      padding: 0;
+      margin-top: 135px;
     }
   }

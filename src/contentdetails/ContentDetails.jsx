@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import RecommendedContent from '../recommendedContent/RecommendedContent';
 import { BsFillCircleFill ,BsFillPlayCircleFill} from "react-icons/bs";
-import { FaShare } from "react-icons/fa6";
+import { PiShareFat } from "react-icons/pi";
 import WatchlistButton from './WatchlistButton';
 import './contentdetails.css';
 import ContentDetailsBottom from '../contentDetails-bottom/ContentDetailsBottom';
@@ -59,34 +59,38 @@ function ContentDetails() {
                 <div className="vid-det">
                   <h1 className='m-title'>{detailsUrl.title}</h1>
                   <div className="v-tca">
-                    <h1><BsFillCircleFill className='g-icon'/> {detailsUrl.type}</h1>
-                    <h1><BsFillCircleFill className='g-icon'/> {detailsUrl.createdAt}</h1>
+                    <h2>{detailsUrl.type}</h2>
                   </div>
                   <div className="v-genre">
-                    <h1 className="v-genre-hed">Genres:</h1>
+                    <h2 className="v-genre-hed">2h 7m</h2>
                     {detailsUrl.keywords.map((keyword, index) => (
-                      <h1 key={index} className="gen"><BsFillCircleFill className='g-icon'/> {keyword}</h1>
+                      <h2 key={index} className="gen"><BsFillCircleFill className='g-icon'/> {keyword}</h2>
                     ))}
+                    <h2 className="v-genre-hed"><BsFillCircleFill className='g-icon'/> U/A 16+</h2>
                   </div>
                   <div className="v-ac-con">
-                    <div className='v-ac-btn'><FaShare /> <span>share</span></div>
+                    <div className='v-ac-btn'><PiShareFat /> <span>share</span></div>
                     <WatchlistButton id={id} />
-                    <div className='v-ac-btn'><BsFillPlayCircleFill /> <span>watch Trailer</span></div>
+                    {/* <div className='v-ac-btn'><BsFillPlayCircleFill /> <span>watch Trailer</span></div> */}
+                  </div>
+                  <div className="v-descrip">
+                    <h3 className='v-descrip-na'> {detailsUrl.description} {detailsUrl.description} {detailsUrl.description} {detailsUrl.description}</h3>
                   </div>
                   <div className="v-cast">
-                    <h1 className='v-cast-hed'>Cast:</h1>
+                    <h2 className='v-cast-hed'>Cast:</h2>
+                  </div>
+                  <div className="v-cast">
                     {detailsUrl.cast.map((cast, index) => (
-                      <h1 key={index} className="gen"><BsFillCircleFill className='g-icon'/> {cast}</h1>
+                      <h2 key={index} className="gen"> {cast}</h2>
                     ))}
                   </div>
                   <div className="v-dir">
-                    <h1 className='v-dir-hed'>Director:</h1>
-                    <h1 className='v-dir-na'><BsFillCircleFill className='g-icon'/> {detailsUrl.director}</h1>
+                    <h2 className='v-dir-hed'>Director:</h2>
                   </div>
-                  <div className="v-descrip">
-                    <h1 className='v-descrip-hed'>Description:</h1>
-                    <h1 className='v-descrip-na'><BsFillCircleFill className='g-icon'/> {detailsUrl.description}</h1>
+                  <div className="v-dir">
+                    <h2 className='v-dir-na'> {detailsUrl.director}</h2>
                   </div>
+                  
                 </div>
               </div>
               <div className="r-cont">
