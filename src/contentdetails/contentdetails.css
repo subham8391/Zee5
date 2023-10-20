@@ -121,6 +121,12 @@
 .v-ac-btn:hover{
     background-color: rgb(41, 41, 67);
 }
+.v-ac-share{
+    background-color: aqua;
+    position: relative;
+    bottom: 30px;
+    right: 6px;
+}
 .v-cast{
     display: flex;
     flex-direction: row;

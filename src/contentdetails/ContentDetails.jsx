@@ -6,12 +6,28 @@ import { PiShareFat } from "react-icons/pi";
 import WatchlistButton from './WatchlistButton';
 import './contentdetails.css';
 import ContentDetailsBottom from '../contentDetails-bottom/ContentDetailsBottom';
+import ShareDropdown from '../carousal/ShareDropdown';
 
 function ContentDetails() {
   const { id, type } = useParams();
   const [detailsUrl, setDetailsUrl] = useState('');
   const [videoKey, setVideoKey] = useState(0);
-  
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedLink, setSelectedLink] = useState(null);
+
+  const openDropdown = () => {
+    setDropdownOpen(true);
+  };
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
+  const handleLinkClick = (url) => {
+    setSelectedLink(url);
+    closeDropdown();
+  };
+
   useEffect(() => {
     const fetchDetailsUrl = async () => {
       try {
@@ -69,7 +85,12 @@ function ContentDetails() {
                     <h2 className="v-genre-hed"><BsFillCircleFill className='g-icon'/> U/A 16+</h2>
                   </div>
                   <div className="v-ac-con">
-                    <div className='v-ac-btn'><PiShareFat /> <span>share</span></div>
+                  <div className="sa-btn-wrapper" >
+                    <div className='v-ac-btn' onMouseEnter={openDropdown}><PiShareFat /> <span>share</span></div>
+                    <div className='v-ac-share'>
+                    <ShareDropdown  isOpen={isDropdownOpen} onClose={closeDropdown} onLinkClick={handleLinkClick} />
+                    </div>
+                    </div>
                     <WatchlistButton id={id} />
                     {/* <div className='v-ac-btn'><BsFillPlayCircleFill /> <span>watch Trailer</span></div> */}
                   </div>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./carousal.css";
-import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from "react-icons/bs";
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 import { FaPlay } from "react-icons/fa6";
 import { PiShareFat } from "react-icons/pi";
 import { Link } from 'react-router-dom';
-
+import ShareDropdown from './ShareDropdown';
 
 function Carousel({ apiEndpoint, filterType }) {
   const [width, setWidth] = useState(0);
@@ -15,7 +15,22 @@ function Carousel({ apiEndpoint, filterType }) {
   const contentRef = useRef(null);
   const prevButton = useRef(null);
   const nextButton = useRef(null);
-  
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedLink, setSelectedLink] = useState(null);
+
+  const openDropdown = () => {
+    setDropdownOpen(true);
+  };
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
+  const handleLinkClick = (url) => {
+    setSelectedLink(url);
+    closeDropdown();
+  };
+
   const updateWidth = () => {
     const newWidth = carouselRef.current.offsetWidth;
     setWidth(newWidth);
@@ -86,7 +101,7 @@ function Carousel({ apiEndpoint, filterType }) {
     updateWidth();
     window.addEventListener("resize", updateWidth);
 
-  
+
     fetchImages();
 
     return () => {
@@ -98,9 +113,9 @@ function Carousel({ apiEndpoint, filterType }) {
     <div id="wrapper">
       <div id="carousel" ref={carouselRef}>
         <div id="content" ref={contentRef}>
-        {loading ? ( 
-          <div className="looding-cont" >
-            <p>Loading...</p>
+          {loading ? (
+            <div className="looding-cont" >
+              <p>Loading...</p>
             </div>
           ) : (
             images.map((imageUrl, index) => (
@@ -118,7 +133,13 @@ function Carousel({ apiEndpoint, filterType }) {
                     <button className='wa-btn'>
                       <Link to={`/details/${imageUrl.type}/${imageUrl._id}`}><FaPlay className='wa-icon' /> Watch</Link>
                     </button>
-                    <button className='sa-btn'><PiShareFat className='sa-icon' /> Share</button>
+                    <div className="sa-btn-wrapper" >
+                      <button className='sa-btn'  onMouseEnter={openDropdown}>
+                        <PiShareFat className='sa-icon' /> Share
+                      </button>
+                      <ShareDropdown isOpen={isDropdownOpen} onClose={closeDropdown} onLinkClick={handleLinkClick} />
+                    </div>
+
                   </div>
                 </div>
               </div>

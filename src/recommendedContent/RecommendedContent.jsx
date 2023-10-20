@@ -2,11 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlay } from "react-icons/fa6";
 import { PiShareFat } from "react-icons/pi";
+import ShareDropdown from '../carousal/ShareDropdown';
 import './recommendedContent.css';
 
 function RecommendedContent({ type }) {
   const [recommendedContent, setRecommendedContent] = useState([]);
   const [loading, setLoading] = useState(true); 
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedLink, setSelectedLink] = useState(null);
+
+  const openDropdown = () => {
+    setDropdownOpen(true);
+  };
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
+  const handleLinkClick = (url) => {
+    setSelectedLink(url);
+    closeDropdown();
+  };
 
   useEffect(() => {
     const fetchRecommendedContent = async () => {
@@ -63,7 +79,12 @@ function RecommendedContent({ type }) {
                 <button className='wa-btn'>
                   <Link to={`/details/${data.type}/${data._id}`}><FaPlay className='wa-icon' /> Watch</Link>
                 </button>
-                <button className='sa-btn'><PiShareFat className='sa-icon' /> Share</button>
+                <div className="sa-btn-wrapper" >
+                      <button className='sa-btn'  onMouseEnter={openDropdown}>
+                        <PiShareFat className='sa-icon' /> Share
+                      </button>
+                      <ShareDropdown isOpen={isDropdownOpen} onClose={closeDropdown} onLinkClick={handleLinkClick} />
+                    </div>
               </div>
             </div>
           </div>

@@ -120,6 +120,13 @@ const SearchResults = () => {
     );
   }, [selectedOptions]);
 
+  const shareOnWhatsApp = () => {
+    const url = 'https://zee5-vcys.vercel.app/';
+    const message = `Check out this link: ${url}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="search-results-container">
       <div className="search-result-section">
@@ -151,7 +158,7 @@ const SearchResults = () => {
                           <FaPlay className='srwa-icon' /> Watch
                         </Link>
                       </button>
-                      <button className='sra-btn'><PiShareFat className='sra-icon' /> Share</button>
+                      <button className='sra-btn' onClick={shareOnWhatsApp}><PiShareFat className='sra-icon' /> Share</button>
                     </div>
                   </div>
                 </div>
@@ -172,7 +179,7 @@ const SearchResults = () => {
                           <FaPlay className='srwa-icon' /> Watch
                         </Link>
                       </button>
-                      <button className='sra-btn'><PiShareFat className='sra-icon' /> Share</button>
+                      <button className='sra-btn'><PiShareFat className='sra-icon'/> Share</button>
                     </div>
                   </div>
                 </div>
