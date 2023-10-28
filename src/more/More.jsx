@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams,Link } from 'react-router-dom';
 import { FaPlay } from "react-icons/fa6";
 import { PiShareFat } from "react-icons/pi";
+import ShareDropdown from '../carousal/ShareDropdown';
 import './more.css';
 
 
@@ -10,7 +11,22 @@ function More() {
   const [datas, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedLink, setSelectedLink] = useState(null);
   
+  const openDropdown = () => {
+    setDropdownOpen(true);
+  };
+
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
+  const handleLinkClick = (url) => {
+    setSelectedLink(url);
+    closeDropdown();
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -71,7 +87,12 @@ function More() {
                   <button className='wa-btn'>
                   <Link to={`/details/${data.type}/${data._id}`}><FaPlay className='wa-icon' /> Watch</Link>
                   </button>
-                  <button className='sa-btn'><PiShareFat className='sa-icon' /> Share</button>
+                  <div className="sa-btn-wrapper" >
+                      <button className='sa-btn'  onMouseEnter={openDropdown}>
+                        <PiShareFat className='sa-icon' /> Share
+                      </button>
+                      <ShareDropdown isOpen={isDropdownOpen} onClose={closeDropdown} onLinkClick={handleLinkClick} />
+                    </div>
                 </div>
               </div>
             </div>
