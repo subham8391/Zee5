@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { IoChevronDown, IoChevronUp } from 'react-icons/io5';
 import Auth from '../auth'; // Import the Auth object
-
+import { userDropcontent } from '../ConstentData';
 function UserDropdownSelect({onClose}) {
   const [isOpen, setIsOpen] = useState(false);
   const isAuthenticated = Auth.isAuthenticated();
@@ -11,15 +11,7 @@ function UserDropdownSelect({onClose}) {
   const toggleUserDropdown = () => {
     setIsOpen(!isOpen);
   };
-
-  const userDropcontent = [
-    { id: 1, name: 'My Watchlist', path: '/account/watchlist' },
-    { id: 2, name: 'My Subscriptions', path: '/account/subscription' },
-    { id: 3, name: 'My Rentals', path: '/account/rentals' },
-    { id: 4, name: 'My Transactions', path: '/account/transaction' },
-    
-  ];
-
+  
   const handleOptionClick = (path) => {
     // setIsOpen(false);
     onClose();

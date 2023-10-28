@@ -77,9 +77,7 @@ const Auth = {
   
     // Function to check if the user is authenticated
     isAuthenticated: () => {
-     
         const token = sessionStorage.getItem('authToken');
-        
         return !!token;
     },
   };

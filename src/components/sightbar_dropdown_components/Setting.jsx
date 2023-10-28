@@ -1,14 +1,12 @@
 import React from 'react'
 import SightDropdown from './SightDropdownCreater';
+import {sightDropScontent} from '../../ConstentData'
 function Setting({onClose}) {
-    const sightDropcontent = [
-        { id: 1, name: 'Reset settings to default', path: '/resetsettings' },
-
-      ];
+    
       const headder='Setting';
       return (
         <>
-          <SightDropdown heading={headder} content={sightDropcontent} onClose={onClose} />
+          <SightDropdown heading={headder} content={sightDropScontent} onClose={onClose} />
         </>
       );
 }

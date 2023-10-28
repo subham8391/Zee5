@@ -443,3 +443,121 @@ export const carouselWebSeriesData = [
     },
   ];
  
+  //share dropdown link
+  import { FaFacebook, FaWhatsapp, FaTwitter,FaLink} from 'react-icons/fa';
+  import { GrMail } from "react-icons/gr";
+
+  export const shareLinks = [
+    { icon: <FaFacebook />, url: 'https://www.facebook.com/post?text=' },
+    { icon: <FaWhatsapp />, url: 'https://wa.me/?text=' },
+    { icon: <FaTwitter />, url: 'https://twitter.com/intent/tweet?text=' },
+    { icon: <GrMail />, url: 'mailto:' },
+    // { icon: <FaLink />, url: 'https://zee5-vcys.vercel.app/' },
+]
+
+//cast options
+
+export const castOptions = [
+  { label: 'Ella Wilson', value: 'Ella Wilson' },
+  { label: 'Ryan Taylor', value: 'Ryan Taylor' },
+  { label: 'John Johnson', value: 'John Johnson' },
+  { label: 'Emma Smith', value: 'Emma Smith' },
+  { label: 'Michael Miller', value: 'Michael Miller' },
+  // Add more options as needed
+];
+
+//content type option
+
+export const ctypeOptions = [
+  { label: 'Movie', value: 'Movie' },
+  { label: 'TV Show', value: 'TV Show' },
+  { label: 'Web Series', value: 'Web Series' },
+  { label: 'Video Song', value: 'Video Song' },
+  { label: 'Short Film', value: 'Short Film' },
+  { label: 'Trailer', value: 'Trailer' },
+];
+
+//genres option
+
+export const genresOptions = [
+  { label: 'Action', value: 'Action' },
+  { label: 'Adventure', value: 'Adventure' },
+  { label: 'Love', value: 'Love' },
+  { label: 'Comedy', value: 'Comedy' },
+  { label: 'Suspense', value: 'Suspense' },
+  { label: 'Romance', value: 'Romance' },
+  { label: 'Betrayal', value: 'Betrayal' },
+  { label: 'Magic', value: 'Magic' },
+  { label: 'Revenge', value: 'Revenge' },
+  { label: 'Thriller', value: 'Thriller' },
+  { label: 'Mystery', value: 'Mystery' },
+];
+
+//sight dropdown explore 
+export const sightDropEcontent = [
+  { id: 1, name: 'TV Shows', path: '/tvshows' },
+  { id: 2, name: 'Movies', path: '/movies' },
+  { id: 3, name: 'Web Series', path: '/web-series' },
+  { id: 4, name: 'Premium', path: '/premium' },
+  { id: 5, name: 'Kids', path: '/kids' },
+  { id: 6, name: 'Live TV', path: '/livetv' },
+  { id: 7, name: 'Sports', path: '/sports' },
+  { id: 8, name: 'Music', path: '/music' },
+  { id: 9, name: 'News', path: '/news' },
+  { id: 10, name: 'Education', path: '/education' },
+  { id: 11, name: 'Rent', path: '/rent' },
+  { id: 12, name: 'Video', path: '/video' },
+  { id: 13, name: 'Songs', path: '/songs' },
+  { id: 14, name: 'Channels', path: '/channels' },
+];
+
+export  const sightDropIcontent = [
+  { id: 1, name: 'About Us', path: '/aboutus' },
+  { id: 2, name: 'Help Center', path: '/helpcenter' },
+  { id: 3, name: 'Content Redressal Mechanism', path: '/content-redressal-echanism' },
+  { id: 4, name: 'Terms of Use', path: '/terms-of-use' },
+  { id: 5, name: 'Privacy Policy', path: '/privacypolicy' },
+  
+];
+
+export   const userDropcontent = [
+  { id: 1, name: 'My Watchlist', path: '/account/watchlist' },
+  { id: 2, name: 'My Subscriptions', path: '/account/subscription' },
+  { id: 3, name: 'My Rentals', path: '/account/rentals' },
+  { id: 4, name: 'My Transactions', path: '/account/transaction' },
+  
+];
+
+export  const sightDropPcontent = [
+  { id: 1, name: 'Buy Plan', path: '/buyplan' },
+  { id: 2, name: 'Have a Prepaid code?', path: '/haveapaidcode' },
+ 
+  
+];
+
+export const sightDropScontent = [
+  { id: 1, name: 'Reset settings to default', path: '/resetsettings' },
+];
+
+  // Data for tabs and their corresponding content
+  export const AccountTabs = [
+    { label: 'Profile', heading: 'My Profile', tabName: 'profile' },
+    { label: 'Watchlist', heading: 'My Watchlist', tabName: 'watchlist' },
+    { label: 'Subscription', heading: 'My Subscriptions', tabName: 'subscription' },
+    { label: 'Rentals', heading: 'My Rentals', tabName: 'rentals' },
+    { label: 'Transaction', heading: 'My Transactions', tabName: 'transaction' },
+    
+  ];
+
+  //watchlist tabs
+  import Episodes from './myaccount/watchlistcomponents/Episodes';
+  import Moviesw from './myaccount/watchlistcomponents/Moviesw'
+  import Sportswl from './myaccount/watchlistcomponents/Sportswl'
+  import Videoswl from './myaccount/watchlistcomponents/Videoswl'
+
+  export const WatchListTabs = [
+    { label: 'Episodes', content: <Episodes/> },
+    { label: 'Movies', content: <Moviesw /> },
+    { label: 'Videos', content: <Videoswl /> },
+    { label: 'Sports', content: <Sportswl /> },
+  ];
