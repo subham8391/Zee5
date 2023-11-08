@@ -19,6 +19,10 @@
   justify-items: center;
   align-items: center;
   }
+  .rc-Container::-webkit-scrollbar {
+    display: none;
+  }
+  
   .a-btn {
     margin-top: 10px;
   }
