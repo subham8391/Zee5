@@ -39,13 +39,13 @@
   .tab {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
-    padding: 5px 50px;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 5px 0px 5px 50px;
     cursor: pointer;
     user-select: none;
     transition: border-right 0.3s;
+   
   }
   
   /* .tab:hover {

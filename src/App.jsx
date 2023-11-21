@@ -37,7 +37,6 @@ function App() {
         <div>
           <NavigationBar />
           <Routes>
-
             <Route path="/search" element={<SearchResults />} />
             <Route path="/more/:apiEndpoint/:filterType/:heading" element={<More />} />
             <Route path="/details/:type/:id" element={<ContentDetails />} />
