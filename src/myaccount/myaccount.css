@@ -165,7 +165,9 @@
   padding: 10px;
   overflow: scroll;
 }
-
+.sub-tab-content::-webkit-scrollbar {
+  display: none;
+}
 /* Subscriptions */
 
 .tab-body{
