@@ -41,7 +41,7 @@ function WatchlistButton({ id }) {
     };
 
     fetchContent();
-  }, [])
+  }, [id])
 
   //for add and removing content from watchlist
   
