@@ -69,6 +69,9 @@
   /* background-color: #ccc; */
 }
 
+.scrollable ::-webkit-scrollbar {
+  display: none;
+ }
 .nav-link a {
   padding: 10px;
   font-size: 15px;
@@ -709,7 +712,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 .search-results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   align-items: center; 
   justify-items: center;
@@ -717,10 +720,10 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .search-results-grid-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
   width: 100%;
-  height: 20vh;
+  height: 20rem;
   border-radius: 10px;
   overflow: hidden;
   white-space: nowrap;
@@ -743,7 +746,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .sr-details {
-  width: 45%;
+  width: 100%;
   font-size: 18px;
   display: flex;
   flex-direction: column;
@@ -752,7 +755,9 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .sr-image {
-  width: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .src-img {
   width: 100%;
@@ -1094,4 +1099,16 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-top: 50px;
 } 
 
+}
+@media screen and (max-width: 768px) {
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  align-items: center; 
+  justify-items: center;
+}
+.search-results-grid-item {
+  height: 15rem;
+}
 }

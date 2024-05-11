@@ -150,7 +150,7 @@ const SearchResults = () => {
                       <img className='src-img' src={result.thumbnail} alt="" />
                     </Link>
                   </div>
-                  <div className="sr-details">
+                  {/* <div className="sr-details">
                     <h5 className='sr-title'>{result.title}</h5>
                     <div className="sra-btn">
                       <button className='srwa-btn'>
@@ -160,7 +160,7 @@ const SearchResults = () => {
                       </button>
                       <button className='sra-btn' onClick={shareOnWhatsApp}><PiShareFat className='sra-icon' /> Share</button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               ))
             : searchResults.map((result) => (
@@ -171,7 +171,7 @@ const SearchResults = () => {
                       <img className='src-img' src={result.thumbnail} alt="" />
                     </Link>
                   </div>
-                  <div className="sr-details">
+                  {/* <div className="sr-details">
                     <h5 className='sr-title'>{result.title}</h5>
                     <div className="sra-btn">
                       <button className='srwa-btn'>
@@ -181,7 +181,7 @@ const SearchResults = () => {
                       </button>
                       <button className='sra-btn'><PiShareFat className='sra-icon'/> Share</button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               ))}
         </div>

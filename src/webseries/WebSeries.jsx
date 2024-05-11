@@ -13,7 +13,7 @@ import si6 from '../images/H-scroll-6.png'
 import si7 from '../images/H-scroll-7.png'
 import './webseries.css'
 
-const imageUrls = [si1, si2, si3, si4, si5, si6, si7
+const imageUrls = [{img:si1,link:'/details/web%20series/64cffeed00bad552e8dce5a6'}, {img:si2,link:'/details/web%20series/64cffeed00bad552e8dce600'}, {img:si3,link:'/details/web%20series/64cffeeb00bad552e8dce292'}, {img:si4,link:'/details/web%20series/64cffeeb00bad552e8dce1a6'}, {img:si5,link:'/details/web%20series/64cffeee00bad552e8dcea10'}, {img:si6,link:'/details/web%20series/64cffeed00bad552e8dce664'}, {img:si7,link:'/details/web%20series/64cffeee00bad552e8dce8ca'}
     // Add more image URLs as needed
 ];
 

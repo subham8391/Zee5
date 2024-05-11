@@ -102,11 +102,22 @@ hr {
   /* Media query for smaller screens (e.g., mobile devices) */
   @media (max-width: 768px) {
     #footerTop {
-      flex-direction: column;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      text-align: center;
+      flex-direction: column;
+      width: 88vw;
+      justify-content: space-between;
+      
+      margin-top: 0;
+      margin-left: 0;
+      margin-bottom: 0;
     }
-  
+    #f-Left h3,
+  #f-Right h3 {
+    display: none;
+  }
+
     #f-Left,
     #f-Right {
       margin-top: 20px;
@@ -116,6 +127,8 @@ hr {
       width: 100%; 
       margin-left:0;
       padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
     }
   
     #f-body {

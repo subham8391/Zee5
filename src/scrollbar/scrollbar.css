@@ -31,6 +31,8 @@
   width: 100%;
   height: 70vh; 
   background: #0f0024;
+  filter: brightness(1.0) contrast(1.3);
+  image-rendering: pixelated;
 }
 
 .carousel-prev,

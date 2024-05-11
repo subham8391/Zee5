@@ -193,9 +193,7 @@ const NavigationBar = () => {
       )}
       {isUserModalOpen && <UserModal onClose={closeUserModal} />}
       {isSightBarModalOpen && <SightBarModal isOpen={isSightBarModalOpen} onClose={closeSightBarModal} />}
-      {isSearchBarOpen && <SearchBarWithDropdown onClose={closeSearchBar
-
-      } />}
+      {isSearchBarOpen && <SearchBarWithDropdown onClose={closeSearchBar} />}
     </>
   );
 };

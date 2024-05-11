@@ -50,9 +50,8 @@ const Auth = {
         }
   
         const data = await response.json();
-        const { token, data: loginData } = data;
-        const { name: userName } = loginData;
-        const { email: userEmail } = loginData;
+        const { token, data: { user } } = data;
+        const { name: userName, email: userEmail } = user;
         sessionStorage.setItem("authToken", token);
         sessionStorage.setItem("userInfoN", userName);
         sessionStorage.setItem("userInfoE", userEmail);

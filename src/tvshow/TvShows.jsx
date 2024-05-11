@@ -13,7 +13,7 @@ import si17 from '../images/H-scroll-17.png'
 import si6 from '../images/H-scroll-6.png'
 import si18 from '../images/H-scroll-18.png'
 import './tvshows.css'
-const imageUrls = [si13, si14, si15, si16, si17, si6, si18];
+const imageUrls = [{img:si13,link:'/details/tv%20show/64cffee700bad552e8dcd602'}, {img:si14,link:'/details/tv%20show/64cffee700bad552e8dcd513'}, {img:si15,link:'/details/tv%20show/64cffee700bad552e8dcd537'}, {img:si16,link:'/details/tv%20show/64cffee800bad552e8dcd684'}, {img:si17,link:'/details/movie/64cffeed00bad552e8dce668'}, {img:si6,link:'/details/web%20series/64cffeed00bad552e8dce6e0'}, {img:si18,link:'/details/web%20series/64cffeee00bad552e8dce8ec'}];
 
 function TvShows() {
   useEffect(() => {

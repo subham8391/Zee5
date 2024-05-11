@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import './scrollbar.css'
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css"; 
-
+import { Link } from 'react-router-dom';
 
 function Scrollbar({ imageUrls}) {
   const [images, setImages] = useState([]);
@@ -37,11 +37,13 @@ function Scrollbar({ imageUrls}) {
       >
         {images.map((imageUrl, index) => (
           <SplideSlide key={index}>
+            <Link to={imageUrl.link}>
             <img
               className="carousel-item"
-              src={imageUrl}
+              src={imageUrl.img}
               alt={`Image ${index + 1}`}
             />
+            </Link>
           </SplideSlide>
         ))}
       </Splide>
